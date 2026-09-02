@@ -8,61 +8,51 @@
   <link rel="manifest" href="manifest.json">
 </head>
 <body>
-  <div class="app-container">
+  <div class="container">
     
     <!-- ÉCRAN D'ACCUEIL -->
-    <div id="home-screen" class="screen active">
-      <div class="card glass">
-        <h1>🚀 QCM Technique Gigantesque</h1>
-        <p>Sélectionne ton domaine d'expertise (20 questions par test avec chronomètre de 30s) :</p>
-        
-        <div class="menu-buttons">
-          <button class="domain-btn" data-domain="Hydraulique">
-            <span class="icon">💧</span> Hydraulique
-          </button>
-          <button class="domain-btn" data-domain="Électricité">
-            <span class="icon">⚡</span> Électricité Industrielle
-          </button>
-          <button class="domain-btn" data-domain="Mécanique">
-            <span class="icon">⚙️</span> Mécanique & Engins
-          </button>
-          <button class="domain-btn" data-domain="Navale">
-            <span class="icon">⚓</span> Mécanique Navale
-          </button>
-        </div>
+    <div id="home-screen" class="screen">
+      <h1>🚀 QCM Technique Gigantesque</h1>
+      <p>Sélectionne ton domaine d'expertise (20 questions par test avec chronomètre de 30s) :</p>
+      
+      <div class="domain-grid">
+        <button class="domain-btn" data-domain="Hydraulique">💧 Hydraulique</button>
+        <button class="domain-btn" data-domain="Électricité">⚡ Électricité Industrielle</button>
+        <button class="domain-btn" data-domain="Mécanique">⚙️ Mécanique & Engins</button>
+        <button class="domain-btn" data-domain="Navale">⚓ Mécanique Navale</button>
       </div>
     </div>
 
-    <!-- ÉCRAN DU QUIZ -->
-    <div id="quiz-screen" class="screen">
+    <!-- ÉCRAN DU QUIZ (masqué par défaut avec .hidden) -->
+    <div id="quiz-screen" class="screen hidden">
       <div class="quiz-header">
         <span id="progress-text">Question 1 / 20</span>
         <span id="timer-text">⏱️ 30s</span>
       </div>
-      <div class="progress-bar-container">
-        <div id="progress-bar"></div>
+      
+      <div class="progress-bar">
+        <div id="progress"></div>
       </div>
 
-      <div class="card">
-        <div id="image-container" class="image-box"></div>
-        <h2 id="question-text">Chargement de la question...</h2>
-        <div id="options-container" class="options-grid"></div>
-      </div>
+      <div id="image-container"></div>
+      <h2 id="question-text">Chargement de la question...</h2>
+      
+      <div id="options-container"></div>
     </div>
 
-    <!-- ÉCRAN DES RÉSULTATS ET CORRECTIONS -->
-    <div id="result-screen" class="screen">
-      <div class="card glass text-center">
-        <h2>🎉 Test Terminé !</h2>
+    <!-- ÉCRAN DES RÉSULTATS (masqué par défaut avec .hidden) -->
+    <div id="result-screen" class="screen hidden">
+      <h2>🎉 Test Terminé !</h2>
+      <div id="score-card">
         <p>Ton score final :</p>
-        <div id="score-text" class="score-badge">0 / 20</div>
-        <p id="feedback-text" class="feedback"></p>
-        
-        <h3>🔍 Correction Détaillée</h3>
-        <div id="corrections-container" class="corrections-list"></div>
-
-        <button id="restart-btn" class="primary-btn">🔄 Retour au Menu Principal</button>
+        <div id="score-text" style="font-size: 24px; font-weight: bold; color: var(--accent);">0 / 20</div>
+        <blockquote id="feedback-text"></blockquote>
       </div>
+      
+      <h3>🔍 Correction Détaillée</h3>
+      <div id="correction-container"></div>
+
+      <button id="restart-btn" class="domain-btn" style="margin-top: 15px; width: 100%;">🔄 Retour au Menu Principal</button>
     </div>
 
   </div>
