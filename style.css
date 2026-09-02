@@ -28,6 +28,17 @@ body {
     border-radius: 16px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.5);
     box-sizing: border-box;
+    position: relative; /* Indispensable pour caler la signature en haut à droite */
+}
+
+/* Style pour la signature en haut à droite */
+.dev-signature {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 7px;
+    color: #64748b;
+    letter-spacing: 0.5px;
 }
 
 .hidden { display: none !important; }
