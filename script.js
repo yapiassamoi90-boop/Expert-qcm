@@ -1,4 +1,4 @@
-// Base de données complète de tes 80 questions techniques
+// Base de données complète des questions techniques, de français et d'anglais
 const questionsData = [
   // --- HYDRAULIQUE ---
   {
@@ -646,6 +646,105 @@ const questionsData = [
     correct: 0,
     explanation: "Le journal de bord est un registre légal obligatoire.",
     svgType: "logbook"
+  },
+
+  // --- FRANÇAIS (Grammaire : Attribut, Épithète, COD, etc.) ---
+  {
+    domain: "Français",
+    question: "Dans la phrase 'Le ciel est devenu noir', quelle est la fonction du mot 'noir' ?",
+    options: ["Un COD", "Un attribut du sujet", "Une épithète liée", "Un complément du nom"],
+    correct: 1,
+    explanation: "'Noir' est relié au sujet 'Le ciel' par l'intermédiaire du verbe d'état 'est devenu'. C'est donc un attribut du sujet.",
+    svgType: "grammar"
+  },
+  {
+    domain: "Français",
+    question: "Dans la phrase 'Il a acheté une belle voiture rouge', quel est le statut grammatical de 'rouge' ?",
+    options: ["Un attribut du sujet", "Un complément d'objet second", "Une épithète (adjectif qualificatif épithète)", "Un verbe à l'infinitif"],
+    correct: 2,
+    explanation: "'Rouge' est placé directement à côté du nom 'voiture' qu'il qualifie sans verbe intermédiaire : c'est une épithète.",
+    svgType: "grammar"
+  },
+  {
+    domain: "Français",
+    question: "Dans la phrase 'Le chat mange la souris', quelle est la fonction du groupe 'la souris' ?",
+    options: ["Un COI (Complément d'Objet Indirect)", "Un COD (Complément d'Objet Direct)", "Un attribut du sujet", "Un complément circonstanciel"],
+    correct: 1,
+    explanation: "'La souris' répond à la question 'mange quoi ?' directement après le verbe, sans préposition. C'est un COD.",
+    svgType: "grammar"
+  },
+  {
+    domain: "Français",
+    question: "Quelle est la nature du mot souligné dans : 'Le travail que tu as fait est remarquable' (ici : 'que') ?",
+    options: ["Un pronom relatif", "Une conjonction de subordination", "Un adjectif démonstratif", "Un adverbe de lieu"],
+    correct: 0,
+    explanation: "'Que' remplace 'le travail' et introduit une proposition subordonnée relative. C'est un pronom relatif.",
+    svgType: "grammar"
+  },
+  {
+    domain: "Français",
+    question: "Dans la phrase 'Elle parle à son ami', que représente 'à son ami' ?",
+    options: ["Un COD", "Un COI (Complément d'Objet Indirect)", "Un attribut", "Un complément d'agent"],
+    correct: 1,
+    explanation: "'À son ami' est relié au verbe par la préposition 'à'. Il s'agit d'un Complément d'Objet Indirect (COI).",
+    svgType: "grammar"
+  },
+
+  // --- ANGLAIS (Grammaire : Passive Voice, Prétérit, etc.) ---
+  {
+    domain: "Anglais",
+    question: "How do you transform this sentence into the passive voice? -> 'The mechanic fixed the engine.'",
+    options: [
+      "The engine is fixed by the mechanic.",
+      "The engine was fixed by the mechanic.",
+      "The engine has been fixed by the mechanic.",
+      "The mechanic was fixed by the engine."
+    ],
+    correct: 1,
+    explanation: "Au prétérit (fixed), la voix passive utilise 'was/were + participe passé'. 'The engine was fixed by the mechanic.'",
+    svgType: "english"
+  },
+  {
+    domain: "Anglais",
+    question: "What is the correct preterite (Simple Past) form of the irregular verb 'to build'?",
+    options: ["Builded", "Building", "Built", "Build"],
+    correct: 2,
+    explanation: "Le prétérit et le participe passé du verbe irrégulier 'to build' est 'built'.",
+    svgType: "english"
+  },
+  {
+    domain: "Anglais",
+    question: "Choose the correct passive form for: 'They will complete the project tomorrow.'",
+    options: [
+      "The project is completed tomorrow.",
+      "The project will be completed tomorrow by them.",
+      "The project was completed tomorrow.",
+      "The project would be completed."
+    ],
+    correct: 1,
+    explanation: "Au futur simple (will + verbe), la voix passive se forme avec 'will be + participe passé'.",
+    svgType: "english"
+  },
+  {
+    domain: "Anglais",
+    question: "Which sentence is correctly written in the Simple Past (Prétérit) with a negative form?",
+    options: [
+      "He didn't worked yesterday.",
+      "He didn't work yesterday.",
+      "He wasn't work yesterday.",
+      "He don't work yesterday."
+    ],
+    correct: 1,
+    explanation: "Au prétérit négatif, on utilise l'auxiliaire 'did not (didn't)' suivi de la base verbale sans le 'ed' (didn't work).",
+    svgType: "english"
+  },
+  {
+    domain: "Anglais",
+    question: "What is the past participle of the verb 'to write' used in the present perfect or passive voice?",
+    options: ["Wrote", "Writed", "Written", "Writing"],
+    correct: 2,
+    explanation: "Le participe passé de 'to write' est 'written' (Infinitive: write -> Preterite: wrote -> Past Participle: written).",
+    svgType: "english"
   }
 ];
 
@@ -675,13 +774,15 @@ const imageContainer = document.getElementById('image-container');
 
 // Illustrations SVG
 function getTechnicalSvg(type) {
-  return `<svg viewBox="0 0 200 100" width="100%" height="120"><rect width="200" height="100" rx="8" fill="#1e293b"/><circle cx="100" cy="50" r="25" fill="none" stroke="#38bdf8" stroke-width="4"/><text x="100" y="55" fill="#38bdf8" font-size="10" text-anchor="middle">SCHÉMA TECHNIQUE</text></svg>`;
+  return `<svg viewBox="0 0 200 100" width="100%" height="120"><rect width="200" height="100" rx="8" fill="#1e293b"/><circle cx="100" cy="50" r="25" fill="none" stroke="#38bdf8" stroke-width="4"/><text x="100" y="55" fill="#38bdf8" font-size="10" text-anchor="middle">QCM INTERACTIF</text></svg>`;
 }
 
 // Démarrer le quiz
 function startQuiz(domain) {
   const filtered = questionsData.filter(q => q.domain === domain);
-  currentQuiz = [...filtered].sort(() => 0.5 - Math.random()).slice(0, 20);
+  // Prend jusqu'à 20 questions (ou moins si le domaine en a moins, comme Français/Anglais pour l'instant)
+  const questionLimit = Math.min(filtered.length, 20);
+  currentQuiz = [...filtered].sort(() => 0.5 - Math.random()).slice(0, questionLimit);
   currentIndex = 0;
   score = 0;
   userAnswers = [];
@@ -768,9 +869,9 @@ function showResults() {
 
   scoreText.textContent = `${score} / ${currentQuiz.length}`;
 
-  if (score >= 18) feedbackText.textContent = "🏆 Excellent ! Niveau d'expertise technique irréprochable.";
-  else if (score >= 14) feedbackText.textContent = "⭐ Très bien ! Solides compétences confirmées.";
-  else if (score >= 10) feedbackText.textContent = "👍 Résultat moyen. Quelques révisions conseillées.";
+  if (score >= currentQuiz.length * 0.9) feedbackText.textContent = "🏆 Excellent ! Niveau d'expertise irréprochable.";
+  else if (score >= currentQuiz.length * 0.7) feedbackText.textContent = "⭐ Très bien ! Solides compétences confirmées.";
+  else if (score >= currentQuiz.length * 0.5) feedbackText.textContent = "👍 Résultat moyen. Quelques révisions conseillées.";
   else feedbackText.textContent = "📚 Des notions à approfondir dans ce domaine.";
 
   correctionContainer.innerHTML = '';
