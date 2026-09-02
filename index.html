@@ -1,61 +1,72 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QCM Technique Gigantesque</title>
-    <link rel="manifest" href="manifest.json">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QCM Technique Gigantesque</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
 </head>
 <body>
-
-    <div class="container">
-        <div id="home-screen" class="screen">
-            <h1>🚀 QCM Technique Gigantesque</h1>
-            <p>Sélectionne ton domaine d'expertise (20 questions par test avec chronomètre de 30s) :</p>
-            <div class="domain-grid">
-                <button class="domain-btn" onclick="startQuiz('hydraulique')">💧 Hydraulique</button>
-                <button class="domain-btn" onclick="startQuiz('electricite')">⚡ Électricité Industrielle</button>
-                <button class="domain-btn" onclick="startQuiz('mecanique')">⚙️ Mécanique & Engins</button>
-                <button class="domain-btn" onclick="startQuiz('navale')">⚓ Mécanique Navale</button>
-            </div>
+  <div class="app-container">
+    
+    <!-- ÉCRAN D'ACCUEIL -->
+    <div id="home-screen" class="screen active">
+      <div class="card glass">
+        <h1>🚀 QCM Technique Gigantesque</h1>
+        <p>Sélectionne ton domaine d'expertise (20 questions par test avec chronomètre de 30s) :</p>
+        
+        <div class="menu-buttons">
+          <button class="domain-btn" data-domain="Hydraulique">
+            <span class="icon">💧</span> Hydraulique
+          </button>
+          <button class="domain-btn" data-domain="Électricité">
+            <span class="icon">⚡</span> Électricité Industrielle
+          </button>
+          <button class="domain-btn" data-domain="Mécanique">
+            <span class="icon">⚙️</span> Mécanique & Engins
+          </button>
+          <button class="domain-btn" data-domain="Navale">
+            <span class="icon">⚓</span> Mécanique Navale
+          </button>
         </div>
-
-        <div id="quiz-screen" class="screen hidden">
-            <div class="quiz-header">
-                <span id="domain-title">Domaine</span>
-                <span id="timer-box">⏱️ <span id="timer">30</span>s</span>
-            </div>
-            <div class="progress-bar"><div id="progress"></div></div>
-            
-            <div id="question-counter" style="font-size: 13px; color: #94a3b8; margin-bottom: 5px;">Question 1 / 20</div>
-            <h2 id="question-text">Question ici</h2>
-            
-            <div id="image-container" class="hidden">
-                <img id="question-img" src="" alt="Illustration 3D technique">
-            </div>
-
-            <div id="options-container">
-                </div>
-            
-            <button id="next-btn" class="hidden" onclick="nextQuestion()">Question Suivante</button>
-        </div>
-
-        <div id="result-screen" class="screen hidden">
-            <h2>📊 Résultats de l'exercice</h2>
-            <div id="score-card">
-                <p id="final-score">Votre score : 0/20</p>
-                <blockquote id="ai-evaluation">Analyse en cours...</blockquote>
-            </div>
-
-            <h3>🔍 Corrections détaillées (Réponses révélées)</h3>
-            <div id="correction-container">
-                </div>
-
-            <button class="domain-btn" onclick="resetApp()" style="margin-top: 20px;">Retour à l'accueil</button>
-        </div>
+      </div>
     </div>
 
-    <script src="script.js"></script>
+    <!-- ÉCRAN DU QUIZ -->
+    <div id="quiz-screen" class="screen">
+      <div class="quiz-header">
+        <span id="progress-text">Question 1 / 20</span>
+        <span id="timer-text">⏱️ 30s</span>
+      </div>
+      <div class="progress-bar-container">
+        <div id="progress-bar"></div>
+      </div>
+
+      <div class="card">
+        <div id="image-container" class="image-box"></div>
+        <h2 id="question-text">Chargement de la question...</h2>
+        <div id="options-container" class="options-grid"></div>
+      </div>
+    </div>
+
+    <!-- ÉCRAN DES RÉSULTATS ET CORRECTIONS -->
+    <div id="result-screen" class="screen">
+      <div class="card glass text-center">
+        <h2>🎉 Test Terminé !</h2>
+        <p>Ton score final :</p>
+        <div id="score-text" class="score-badge">0 / 20</div>
+        <p id="feedback-text" class="feedback"></p>
+        
+        <h3>🔍 Correction Détaillée</h3>
+        <div id="corrections-container" class="corrections-list"></div>
+
+        <button id="restart-btn" class="primary-btn">🔄 Retour au Menu Principal</button>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
