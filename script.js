@@ -1,4 +1,4 @@
-// Base de données complète des questions techniques, de français et d'anglais
+// Base de données complète des questions techniques, de français et d'anglais (20 questions par domaine)
 const questionsData = [
   // --- HYDRAULIQUE ---
   {
@@ -648,7 +648,7 @@ const questionsData = [
     svgType: "logbook"
   },
 
-  // --- FRANÇAIS (Grammaire : Attribut, Épithète, COD, etc.) ---
+  // --- FRANÇAIS (20 questions) ---
   {
     domain: "Français",
     question: "Dans la phrase 'Le ciel est devenu noir', quelle est la fonction du mot 'noir' ?",
@@ -689,8 +689,128 @@ const questionsData = [
     explanation: "'À son ami' est relié au verbe par la préposition 'à'. Il s'agit d'un Complément d'Objet Indirect (COI).",
     svgType: "grammar"
   },
+  {
+    domain: "Français",
+    question: "Quel est le mode du verbe dans la phrase : 'Il faut que tu viennes' ?",
+    options: ["L'indicatif", "Le subjonctif", "L'impératif", "Le conditionnel"],
+    correct: 1,
+    explanation: "Après la tournure 'il faut que', on emploie obligatoirement le mode subjonctif.",
+    svgType: "grammar"
+  },
+  {
+    domain: "Français",
+    question: "Comment s'écrit correctement le participe passé du verbe peindre au féminin pluriel (des portes ...) ?",
+    options: ["peintes", "peinds", "peintes", "peinte"],
+    correct: 0,
+    explanation: "Le verbe 'peindre' prend un 't' au participe passé (peint, peinte, peintes) et s'accorde avec le COD placé avant.",
+    svgType: "grammar"
+  },
+  {
+    domain: "Français",
+    question: "Dans la phrase 'Pierre est intelligent', quelle est la nature grammaticale du mot 'intelligent' ?",
+    options: ["Un adjectif qualificatif attribut", "Un nom commun", "Un verbe d'état", "Un adverbe"],
+    correct: 0,
+    explanation: "'Intelligent' est un adjectif qualificatif relié au sujet 'Pierre' par le verbe d'état 'est'.",
+    svgType: "grammar"
+  },
+  {
+    domain: "Français",
+    question: "Laquelle de ces phrases contient un COD (Complément d'Objet Direct) ?",
+    options: ["Il téléphone à sa mère.", "Le train arrive en gare.", "L'enfant mange une pomme.", "Elle rêve d'un voyage."],
+    correct: 2,
+    explanation: "'une pomme' complète le verbe 'mange' directement sans préposition (mange quoi ? une pomme).",
+    svgType: "grammar"
+  },
+  {
+    domain: "Français",
+    question: "Quel mot est un pronom démonstratif ?",
+    options: ["Mon", "Celui-ci", "Qui", "Plusieurs"],
+    correct: 1,
+    explanation: "'Celui-ci' permet de désigner précisément un élément déjà évoqué en le montrant (démonstratif).",
+    svgType: "grammar"
+  },
+  {
+    domain: "Français",
+    question: "Dans 'Les enfants courent dans le jardin', quelle est la nature du groupe 'dans le jardin' ?",
+    options: ["Un COD", "Un complément circonstanciel de lieu", "Un attribut du sujet", "Un COI"],
+    correct: 1,
+    explanation: "'Dans le jardin' indique le lieu où se déroule l'action, c'est un complément circonstanciel de lieu déplaçable et supprimable.",
+    svgType: "grammar"
+  },
+  {
+    domain: "Français",
+    question: "Quel est le temps du verbe dans la phrase : 'Quand il aura fini, il sortira' ?",
+    options: ["Futur simple", "Futur antérieur", "Présent de l'indicatif", "Passé composé"],
+    correct: 1,
+    explanation: "'aura fini' est composé de l'auxiliaire avoir au futur simple suivi d'un participe passé : c'est le futur antérieur.",
+    svgType: "grammar"
+  },
+  {
+    domain: "Français",
+    question: "Identifier le mot invariable parmi ces propositions :",
+    options: ["Joyeux", "Courageux", "Toujours", "Grand"],
+    correct: 2,
+    explanation: "'Toujours' est un adverbe, une classe de mots invariables (pas de féminin ni de pluriel).",
+    svgType: "grammar"
+  },
+  {
+    domain: "Français",
+    question: "Dans la phrase 'Le livre que tu lis est passionnant', quelle est la fonction de 'que' ?",
+    options: ["Sujet", "COD du verbe lis", "Attribut", "Complément du nom"],
+    correct: 1,
+    explanation: "Dans la proposition subordonnée 'que tu lis', 'que' remplace le livre et répond à 'tu lis quoi ? -> le livre'. C'est le COD.",
+    svgType: "grammar"
+  },
+  {
+    domain: "Français",
+    question: "Quelle est la bonne orthographe du pluriel du mot 'un chou' ?",
+    options: ["des chous", "des choux", "des chou", "des chouxes"],
+    correct: 1,
+    explanation: "Les noms en -ou prennent généralement un -x au pluriel (sauf exceptions comme clou, trou, sou...).",
+    svgType: "grammar"
+  },
+  {
+    domain: "Français",
+    question: "Qu'appelle-t-on une proposition subordonnée relative ?",
+    options: ["Une proposition introduite par un subordonnant comme 'que' ou 'si'", "Une proposition introduite par un pronom relatif (qui, que, dont, où...)", "Une proposition indépendante", "Une phrase simple"],
+    correct: 1,
+    explanation: "La relative est introduite par un pronom relatif et complète généralement un nom antécédent.",
+    svgType: "grammar"
+  },
+  {
+    domain: "Français",
+    question: "Quel est le rôle d'un complément d'agent dans une phrase passive ?",
+    options: ["Il subit l'action", "Il fait l'action exprimée par le verbe au passif", "Il indique le temps", "Il exprime le lieu"],
+    correct: 1,
+    explanation: "Dans 'Le chat est mangé par la souris' (exemple fictif), 'par la souris' est le complément d'agent qui réalise l'action.",
+    svgType: "grammar"
+  },
+  {
+    domain: "Français",
+    question: "Quel pronom personnel remplit la fonction de COI dans : 'Je lui parle' ?",
+    options: ["Je", "lui", "parle", "aucun"],
+    correct: 1,
+    explanation: "'lui' remplace 'à lui' ou 'à elle' (parler à quelqu'un), c'est donc un pronom COI.",
+    svgType: "grammar"
+  },
+  {
+    domain: "Français",
+    question: "Dans la phrase 'La maison dont je rêve est grande', quelle est la fonction du pronom relatif 'dont' ?",
+    options: ["COD", "Complément du nom", "Complément de l'adjectif ou du verbe (rêver de)", "Sujet"],
+    correct: 2,
+    explanation: "On 'rêve de' quelque chose. 'dont' remplace le complément introduit par la préposition 'de'.",
+    svgType: "grammar"
+  },
+  {
+    domain: "Français",
+    question: "Quel verbe du 1er groupe possède une modification orthographique à la 1ère personne du pluriel au présent (nous nous...) ?",
+    options: ["Manger (nous mangeons)", "Aimer (nous aimons)", "Chanter (nous chantons)", "Parler (nous parlons)"],
+    correct: 0,
+    explanation: "Pour conserver le son [ʒ] (j), on ajoute un 'e' après le g devant le 'o' (nous mangeons).",
+    svgType: "grammar"
+  },
 
-  // --- ANGLAIS (Grammaire : Passive Voice, Prétérit, etc.) ---
+  // --- ANGLAIS (20 questions) ---
   {
     domain: "Anglais",
     question: "How do you transform this sentence into the passive voice? -> 'The mechanic fixed the engine.'",
@@ -745,6 +865,161 @@ const questionsData = [
     correct: 2,
     explanation: "Le participe passé de 'to write' est 'written' (Infinitive: write -> Preterite: wrote -> Past Participle: written).",
     svgType: "english"
+  },
+  {
+    domain: "Anglais",
+    question: "What is the correct Simple Past form of the irregular verb 'to go'?",
+    options: ["Goed", "Gone", "Went", "Going"],
+    correct: 2,
+    explanation: "Le verbe 'to go au prétérit est un verbe irrégulier très courant : 'went'.",
+    svgType: "english"
+  },
+  {
+    domain: "Anglais",
+    question: "Select the correct passive voice sentence for: 'People speak English all over the world.'",
+    options: [
+      "English was spoken all over the world.",
+      "English is spoken all over the world.",
+      "English has been spoken all over the world.",
+      "English will be spoken all over the world."
+    ],
+    correct: 1,
+    explanation: "Au présent simple (speak), la voix passive utilise 'is/are + participe passé' (is spoken).",
+    svgType: "english"
+  },
+  {
+    domain: "Anglais",
+    question: "What is the past participle of the irregular verb 'to see'?",
+    options: ["Saw", "Seen", "Seed", "Seeing"],
+    correct: 1,
+    explanation: "Les formes de 'to see' sont : see (base), saw (preterite), seen (past participle).",
+    svgType: "english"
+  },
+  {
+    domain: "Anglais",
+    question: "How do you form a question in the Simple Past with regular verbs?",
+    options: [
+      "Did + subject + base verb?",
+      "Do + subject + preterite?",
+      "Was + subject + verb-ing?",
+      "Had + subject + past participle?"
+    ],
+    correct: 0,
+    explanation: "Pour poser une question au prétérit en anglais, on utilise l'auxiliaire 'Did' suivi du sujet et de la base verbale.",
+    svgType: "english"
+  },
+  {
+    domain: "Anglais",
+    question: "Choose the passive version of: 'The company hired three new engineers.'",
+    options: [
+      "Three new engineers are hired by the company.",
+      "Three new engineers were hired by the company.",
+      "Three new engineers will be hired by the company.",
+      "Three new engineers had hired the company."
+    ],
+    correct: 1,
+    explanation: "Le verbe 'hired' est au prétérit, la voix passive requiert donc 'were hired'.",
+    svgType: "english"
+  },
+  {
+    domain: "Anglais",
+    question: "What is the preterite form of the irregular verb 'to take'?",
+    options: ["Taked", "Taken", "Took", "Taking"],
+    correct: 2,
+    explanation: "Le prétérit de 'to take' est 'took' (et le participe passé est 'taken').",
+    svgType: "english"
+  },
+  {
+    domain: "Anglais",
+    question: "Which sentence uses the Present Perfect correctly?",
+    options: ["I have finish my work.", "I has finished my work.", "I have finished my work.", "I did finished my work."],
+    correct: 2,
+    explanation: "Le Present Perfect se forme avec 'have/has + participe passé' (I have finished).",
+    svgType: "english"
+  },
+  {
+    domain: "Anglais",
+    question: "What is the past participle of 'to break'?",
+    options: ["Broke", "Broken", "Breaked", "Breaking"],
+    correct: 1,
+    explanation: "Les formes de 'to break' sont break -> broke -> broken.",
+    svgType: "english"
+  },
+  {
+    domain: "Anglais",
+    question: "How do you translate 'Il a été arrêté par la police' (Passive Voice) ?",
+    options: [
+      "He was arrested by the police.",
+      "He is arrested by the police.",
+      "He has arrested by the police.",
+      "He were arrested by the police."
+    ],
+    correct: 0,
+    explanation: "C'est un prétérit passif : 'He was arrested by the police.'",
+    svgType: "english"
+  },
+  {
+    domain: "Anglais",
+    question: "What is the correct preterite form of the irregular verb 'to make'?",
+    options: ["Maked", "Made", "Making", "Make"],
+    correct: 1,
+    explanation: "Le prétérit et le participe passé de 'to make' est 'made'.",
+    svgType: "english"
+  },
+  {
+    domain: "Anglais",
+    question: "Identify the correct passive sentence in the Present Continuous: 'They are repairing the car.'",
+    options: [
+      "The car is repaired.",
+      "The car is being repaired.",
+      "The car was repaired.",
+      "The car has been repaired."
+    ],
+    correct: 1,
+    explanation: "Au présent continu, la voix passive s'écrit 'is/are + being + participe passé' (is being repaired).",
+    svgType: "english"
+  },
+  {
+    domain: "Anglais",
+    question: "What is the past participle of the irregular verb 'to drive'?",
+    options: ["Drove", "Drivened", "Driven", "Driving"],
+    correct: 2,
+    explanation: "Drive a pour prétérit 'drove' et pour participe passé 'driven'.",
+    svgType: "english"
+  },
+  {
+    domain: "Anglais",
+    question: "Choose the correct negative form in Simple Past: 'She went to London.'",
+    options: [
+      "She didn't went to London.",
+      "She didn't go to London.",
+      "She wasn't go to London.",
+      "She doesn't went to London."
+    ],
+    correct: 1,
+    explanation: "L'auxiliaire 'didn't' absorbe le prétérit, le verbe principal revient donc à sa base verbale 'go'.",
+    svgType: "english"
+  },
+  {
+    domain: "Anglais",
+    question: "What is the preterite form of the verb 'to find'?",
+    options: ["Fined", "Found", "Finded", "Finding"],
+    correct: 1,
+    explanation: "Le verbe irrégulier 'to find' devient 'found' au prétérit et au participe passé.",
+    svgType: "english"
+  },
+  {
+    domain: "Anglais",
+    question: "Which option represents a correct passive sentence with a modal verb ('must')?",
+    options: [
+      "The report must be finished today.",
+      "The report must finish today.",
+      "The report must finished today.",
+      "The report must being finished today."
+    ],
+    correct: 0,
+    explanation: "Avec un modal (must, can, should), la voix passive se construit avec 'modal + be + participe passé'.",
+    svgType: "english"
   }
 ];
 
@@ -780,14 +1055,12 @@ function getTechnicalSvg(type) {
 // Démarrer le quiz
 function startQuiz(domain) {
   const filtered = questionsData.filter(q => q.domain === domain);
-  // Prend jusqu'à 20 questions (ou moins si le domaine en a moins, comme Français/Anglais pour l'instant)
   const questionLimit = Math.min(filtered.length, 20);
   currentQuiz = [...filtered].sort(() => 0.5 - Math.random()).slice(0, questionLimit);
   currentIndex = 0;
   score = 0;
   userAnswers = [];
 
-  // Gestion propre des écrans avec .hidden
   homeScreen.classList.add('hidden');
   resultScreen.classList.add('hidden');
   quizScreen.classList.remove('hidden');
