@@ -661,7 +661,7 @@ let timeLeft = 30;
 const homeScreen = document.getElementById('home-screen');
 const quizScreen = document.getElementById('quiz-screen');
 const resultScreen = document.getElementById('result-screen');
-const startBtn = document.getElementById('start-btn');
+const domainButtons = document.querySelectorAll('.domain-btn');
 const restartBtn = document.getElementById('restart-btn');
 const questionText = document.getElementById('question-text');
 const optionsContainer = document.getElementById('options-container');
@@ -681,7 +681,7 @@ function getTechnicalSvg(type) {
       return `<svg viewBox="0 0 200 120" width="100%" height="100%"><rect width="200" height="120" rx="10" fill="#1e293b"/><path d="M40 60 H80 L100 40 L120 60 H160" stroke="#38bdf8" stroke-width="6" fill="none" stroke-linecap="round"/><circle cx="100" cy="40" r="15" fill="#0ea5e9"/><rect x="90" y="15" width="20" height="15" rx="3" fill="#cbd5e1"/><path d="M70 85 H130 V95 H70 Z" fill="#334155" stroke="#64748b" stroke-width="2"/><text x="100" y="110" fill="#94a3b8" font-size="10" text-anchor="middle">SCHÉMA HYDRAULIQUE</text></svg>`;
     case 'accumulator':
     case 'pump':
-      return `<svg viewBox="0 0 200 120" width="100%\" height="100%"><rect width="200" height="120" rx="10" fill="#1e293b"/><rect x="75" y="25" width="50" height="70" rx="25" fill="none" stroke="#38bdf8" stroke-width="5"/><line x1="100" y1="25" x2="100" y2="95" stroke="#ef4444" stroke-width="3" stroke-dasharray="4,4"/><circle cx="100" cy="25" r="8" fill="#f59e0b"/><text x="100" y="110" fill="#94a3b8" font-size="10" text-anchor="middle">ACCUMULATEUR / POMPE</text></svg>`;
+      return `<svg viewBox="0 0 200 120" width="100%" height="100%"><rect width="200" height="120" rx="10" fill="#1e293b"/><rect x="75" y="25" width="50" height="70" rx="25" fill="none" stroke="#38bdf8" stroke-width="5"/><line x1="100" y1="25" x2="100" y2="95" stroke="#ef4444" stroke-width="3" stroke-dasharray="4,4"/><circle cx="100" cy="25" r="8" fill="#f59e0b"/><text x="100" y="110" fill="#94a3b8" font-size="10" text-anchor="middle">ACCUMULATEUR / POMPE</text></svg>`;
     case 'breaker':
     case 'contactor':
     case 'thermal':
@@ -699,10 +699,13 @@ function getTechnicalSvg(type) {
   }
 }
 
-// Démarrer le quiz (tirage aléatoire de 20 questions)
-function startQuiz() {
-  // Mélanger et prendre 20 questions
-  currentQuiz = [...questionsData].sort(() => 0.5 - Math.random()).slice(0, 20);
+// Démarrer le quiz selon le domaine choisi
+function startQuiz(selectedDomain) {
+  // Filtrer les questions selon le domaine cliqué
+  const filteredQuestions = questionsData.filter(q => q.domain === selectedDomain);
+  
+  // Mélanger et prendre jusqu'à 20 questions du domaine
+  currentQuiz = [...filteredQuestions].sort(() => 0.5 - Math.random()).slice(0, 20);
   currentIndex = 0;
   score = 0;
   userAnswers = [];
@@ -731,8 +734,8 @@ function loadQuestion() {
   }, 1000);
 
   const q = currentQuiz[currentIndex];
-  progressText.textContent = `Question ${currentIndex + 1} / 20 (${q.domain})`;
-  progressBar.style.width = `${((currentIndex + 1) / 20) * 100}%`;
+  progressText.textContent = `Question ${currentIndex + 1} / ${currentQuiz.length} (${q.domain})`;
+  progressBar.style.width = `${((currentIndex + 1) / currentQuiz.length) * 100}%`;
   questionText.textContent = q.question;
 
   // Afficher l'illustration SVG intégrée
@@ -783,7 +786,7 @@ function handleAnswer(selectedIndex) {
   // Passer à la question suivante après 1.5 seconde
   setTimeout(() => {
     currentIndex++;
-    if (currentIndex < 20) {
+    if (currentIndex < currentQuiz.length) {
       loadQuestion();
     } else {
       showResults();
@@ -796,7 +799,7 @@ function showResults() {
   quizScreen.classList.remove('active');
   resultScreen.classList.add('active');
 
-  scoreText.textContent = `${score} / 20`;
+  scoreText.textContent = `${score} / ${currentQuiz.length}`;
 
   let feedback = "";
   if (score >= 18) {
@@ -806,7 +809,7 @@ function showResults() {
   } else if (score >= 10) {
     feedback = "👍 Résultat moyen. Quelques révisions techniques sont conseillées.";
   } else {
-    feedback = "📚 Des notions à approfondir dans les différents domaines techniques.";
+    feedback = "📚 Des notions à approfondir dans ce domaine technique.";
   }
   feedbackText.textContent = feedback;
 
@@ -833,8 +836,14 @@ function showResults() {
   });
 }
 
-// Écouteurs d'événements
-startBtn.addEventListener('click', startQuiz);
+// Écouteurs d'événements pour les boutons de domaine
+domainButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const domain = btn.getAttribute('data-domain');
+    startQuiz(domain);
+  });
+});
+
 restartBtn.addEventListener('click', () => {
   resultScreen.classList.remove('active');
   homeScreen.classList.add('active');
