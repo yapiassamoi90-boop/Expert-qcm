@@ -1,6 +1,6 @@
-// Base de données géante de 80 questions techniques (Hydraulique, Électricité, Mécanique, Navale)
+// Base de données complète de tes 80 questions techniques
 const questionsData = [
-  // --- HYDRAULIQUE (20 questions) ---
+  // --- HYDRAULIQUE ---
   {
     domain: "Hydraulique",
     question: "Quel composant permet de limiter la pression maximale dans un circuit hydraulique ?",
@@ -14,7 +14,7 @@ const questionsData = [
     question: "Quel est le rôle principal d'un accumulateur hydraulique ?",
     options: ["Refroidir l'huile", "Stocker de l'énergie sous pression", "Filtrer les impuretés", "Augmenter la vitesse des vérins"],
     correct: 1,
-    explanation: "L'accumulateur emmagasine de l'énergie hydraulique sous pression grâce à un gaz (azote) pour la restituer en cas de besoin.",
+    explanation: "L'accumulateur emmagasine de l'énergie hydraulique sous pression grâce à un gaz pour la restituer en cas de besoin.",
     svgType: "accumulator"
   },
   {
@@ -22,7 +22,7 @@ const questionsData = [
     question: "Qu'indique une chute de pression anormale aux bornes d'un distributeur ?",
     options: ["Une surchauffe de l'huile", "Des pertes de charge excessives ou un débit trop élevé", "Un excès de lubrification", "Rien de particulier"],
     correct: 1,
-    explanation: "Une perte de charge excessive est souvent liée à un laminage important, un encrassement ou un sous-dimensionnement des canalisations.",
+    explanation: "Une perte de charge excessive est souvent liée à un laminage important, un encrassement ou un sous-dimensionnement.",
     svgType: "pressure"
   },
   {
@@ -36,17 +36,17 @@ const questionsData = [
   {
     domain: "Hydraulique",
     question: "Quelle est la cause principale de la cavitation dans une pompe hydraulique ?",
-    options: ["Une pression de refoulement trop basse", "Une aspiration difficile ou une dépression excessive (manque d'alimentation)", "Une huile trop froide", "Un filtre trop propre"],
+    options: ["Une pression de refoulement trop basse", "Une aspiration difficile ou une dépression excessive", "Une huile trop froide", "Un filtre trop propre"],
     correct: 1,
-    explanation: "La cavitation se produit lorsque la pression à l'aspiration descend sous la tension de vapeur de l'huile, créant des micro-bulles destructrices.",
+    explanation: "La cavitation se produit lorsque la pression à l'aspiration descend sous la tension de vapeur, créant des micro-bulles.",
     svgType: "warning"
   },
   {
     domain: "Hydraulique",
     question: "À quoi sert un clapet anti-retour piloté ?",
-    options: ["À bloquer le fluide dans les deux sens au repos", "À autoriser le flux dans un sens et à l'autoriser dans l'autre uniquement sur commande pilote", "À purger l'air du circuit", "À réguler la température"],
+    options: ["À bloquer le fluide dans les deux sens au repos", "À autoriser le flux dans un sens et dans l'autre uniquement sur commande pilote", "À purger l'air", "À réguler la température"],
     correct: 1,
-    explanation: "Il garantit un blocage étanche (sécurité de position de vérin) jusqu'à ce qu'une pression de pilotage vienne l'ouvrir.",
+    explanation: "Il garantit un blocage étanche jusqu'à ce qu'une pression de pilotage vienne l'ouvrir.",
     svgType: "valve"
   },
   {
@@ -54,7 +54,7 @@ const questionsData = [
     question: "Comment se comporte la viscosité d'une huile hydraulique standard lorsque sa température augmente ?",
     options: ["Elle augmente", "Elle diminue", "Elle reste strictement constante", "Elle se solidifie"],
     correct: 1,
-    explanation: "Plus l'huile chauffe, plus elle devient fluide (sa viscosité diminue), ce qui peut impacter le rendement volumétrique.",
+    explanation: "Plus l'huile chauffe, plus elle devient fluide (sa viscosité diminue).",
     svgType: "oil"
   },
   {
@@ -62,7 +62,7 @@ const questionsData = [
     question: "Quel appareil utilise-t-on pour mesurer la pression effective d'un circuit ?",
     options: ["Un débitmètre", "Un manomètre", "Un viscomètre", "Un thermomètre"],
     correct: 1,
-    explanation: "Le manomètre est l'instrument de mesure indispensable raccordé aux prises de pression du système.",
+    explanation: "Le manomètre est l'instrument indispensable raccordé aux prises de pression.",
     svgType: "gauge"
   },
   {
@@ -70,31 +70,31 @@ const questionsData = [
     question: "Dans un système oléohydraulique, que transmet principalement le fluide ?",
     options: ["De l'électricité statique", "De la puissance et de l'énergie sous forme de pression et de débit", "De la vapeur d'eau", "De l'air comprimé"],
     correct: 1,
-    explanation: "L'huile transmet l'énergie mécanique de la centrale vers les récepteurs (vérins, moteurs).",
+    explanation: "L'huile transmet l'énergie mécanique de la centrale vers les récepteurs.",
     svgType: "flow"
   },
   {
     domain: "Hydraulique",
     question: "Quel rôle joue le filtre à huile placé sur la ligne de retour ?",
-    options: ["Protéger l'aspiration de la pompe", "Retenir les impuretés avant le retour au réservoir pour garder l'huile propre", "Refroidir l'huile à haute pression", "Créer une haute pression constante"],
+    options: ["Protéger l'aspiration de la pompe", "Retenir les impuretés avant le retour au réservoir", "Refroidir l'huile", "Créer une haute pression"],
     correct: 1,
-    explanation: "Le filtre de retour capture les particules générées par l'usure des composants du circuit.",
+    explanation: "Le filtre de retour capture les particules générées par l'usure des composants.",
     svgType: "filter"
   },
   {
     domain: "Hydraulique",
     question: "Qu'est-ce qu'un vérin double effet ?",
-    options: ["Un vérin commandé par deux pompes", "Un vérin dont la sortie et la rentrée de la tige sont assurées par la pression hydraulique", "Un vérin sans joint", "Un vérin rotatif"],
+    options: ["Un vérin commandé par deux pompes", "Un vérin dont la sortie et la rentrée de la tige sont assurées par la pression", "Un vérin sans joint", "Un vérin rotatif"],
     correct: 1,
-    explanation: "L'huile sous pression est appliquée alternativement de chaque côté du piston pour les deux sens de mouvement.",
+    explanation: "L'huile sous pression est appliquée alternativement de chaque côté du piston.",
     svgType: "cylinder"
   },
   {
     domain: "Hydraulique",
     question: "Quel est l'inconvénient majeur d'une huile hydraulique contaminée par l'eau ?",
-    options: ["Une augmentation de la couleur", "Une oxydation rapide, corrosion et perte de pouvoir lubrifiant", "Un gel immédiat du système", "Une baisse de la masse volumique"],
+    options: ["Une augmentation de la couleur", "Une oxydation rapide, corrosion et perte de lubrification", "Un gel immédiat", "Une baisse de masse volumique"],
     correct: 1,
-    explanation: "L'eau provoque l'émulsion de l'huile, détériore les composants et favorise l'usure prématurée.",
+    explanation: "L'eau provoque l'émulsion de l'huile et détériore les composants prématurément.",
     svgType: "warning"
   },
   {
@@ -102,7 +102,7 @@ const questionsData = [
     question: "Que signifie la désignation d'un distributeur 4/3 ?",
     options: ["4 orifices et 3 positions", "3 orifices et 4 étages", "4 pressions et 3 débits", "4 clapets et 3 moteurs"],
     correct: 0,
-    explanation: "Le premier chiffre indique le nombre d'orifices de raccordement, et le second le nombre de positions de commutation.",
+    explanation: "Le premier chiffre indique les orifices, et le second les positions de commutation.",
     svgType: "valve"
   },
   {
@@ -116,15 +116,15 @@ const questionsData = [
   {
     domain: "Hydraulique",
     question: "Pourquoi purge-t-on un circuit hydraulique après intervention ?",
-    options: ["Pour vider toute l'huile", "Pour éliminer les poches d'air responsables d'un fonctionnement spongieux et bruyant", "Pour nettoyer le réservoir", "Pour changer la couleur de l'huile"],
+    options: ["Pour vider l'huile", "Pour éliminer les poches d'air responsables d'un fonctionnement spongieux", "Pour nettoyer le réservoir", "Pour changer la couleur"],
     correct: 1,
-    explanation: "L'air compressible perturbe la précision des mouvements et provoque des bruits de cavitation.",
+    explanation: "L'air compressible perturbe la précision des mouvements et provoque des bruits.",
     svgType: "air"
   },
   {
     domain: "Hydraulique",
     question: "Quel rôle joue le régleur de débit (étrangleur) ?",
-    options: ["Limiter la pression maximale", "Ajuster la vitesse d'un actionneur en freinant le passage du fluide", "Changer le sens de rotation", "Stocker de l'huile"],
+    options: ["Limiter la pression", "Ajuster la vitesse d'un actionneur en freinant le fluide", "Changer le sens", "Stocker de l'huile"],
     correct: 1,
     explanation: "En créant une perte de charge contrôlée, il restreint le débit traversant.",
     svgType: "flow"
@@ -132,7 +132,7 @@ const questionsData = [
   {
     domain: "Hydraulique",
     question: "Qu'appelle-t-on 'coup de bélier' dans une canalisation ?",
-    options: ["Un choc mécanique externe", "Une surpression brutale due à l'arrêt ou au changement soudain de direction d'un fluide en mouvement", "Le démarrage d'une pompe", "La vibration d'un filtre"],
+    options: ["Un choc externe", "Une surpression brutale due à l'arrêt ou changement de direction d'un fluide", "Le démarrage d'une pompe", "La vibration d'un filtre"],
     correct: 1,
     explanation: "L'inertie de la colonne d'huile stoppée net engendre des pics de pression destructeurs.",
     svgType: "warning"
@@ -140,67 +140,67 @@ const questionsData = [
   {
     domain: "Hydraulique",
     question: "Quel est l'indice ISO généralement utilisé pour classifier les huiles hydrauliques ?",
-    options: ["L'indice ISO VG (Viscosity Grade)", "L'indice d'octane", "L'indice de résistance", "L'indice de tension"],
+    options: ["L'indice ISO VG", "L'indice d'octane", "L'indice de résistance", "L'indice de tension"],
     correct: 0,
-    explanation: "ISO VG caractérise la viscosité cinématique de l'huile à 40°C (ex: ISO VG 46).",
+    explanation: "ISO VG caractérise la viscosité cinématique de l'huile à 40°C.",
     svgType: "oil"
   },
   {
     domain: "Hydraulique",
     question: "Où se situe généralement le clapet de décharge principal d'une centrale ?",
-    options: ["Sur le retour de cuve", "Directement en sortie de pompe pour protéger l'installation contre les surpressions", "Dans les vérins", "Sur le tableau de commande"],
+    options: ["Sur le retour de cuve", "Directement en sortie de pompe pour protéger l'installation", "Dans les vérins", "Sur le tableau"],
     correct: 1,
     explanation: "Il fixe la pression maximale admissible de tout le circuit hydraulique.",
     svgType: "pressure"
   },
   {
     domain: "Hydraulique",
-    question: "Quel composant assure l'échange thermique pour maintenir l'huile à une température optimale ?",
-    options: ["Le radiateur / échangeur thermique", "Le filtre magnétique", "Le manomètre", "Le clapet de non-retour"],
+    question: "Quel composant assure l'échange thermique pour maintenir l'huile à bonne température ?",
+    options: ["Le radiateur / échangeur thermique", "Le filtre magnétique", "Le manomètre", "Le clapet anti-retour"],
     correct: 0,
-    explanation: "L'échangeur (eau/huile ou air/huile) évacue les calories produites par les pertes de charge.",
+    explanation: "L'échangeur évacue les calories produites par les pertes de charge.",
     svgType: "cooler"
   },
 
-  // --- ELECTRICITE (20 questions) ---
+  // --- ELECTRICITE ---
   {
     domain: "Électricité",
     question: "Quel est le rôle d'un disjoncteur DPN (Phase + Neutre) ?",
-    options: ["Coupler deux moteurs", "Protéger simultanément la phase et le neutre contre les courts-circuits et surcharges", "Mesurer la tension réseau", "Élever la tension alternative"],
+    options: ["Coupler deux moteurs", "Protéger simultanément la phase et le neutre contre les courts-circuits et surcharges", "Mesurer la tension", "Élever la tension"],
     correct: 1,
-    explanation: "Le DPN coupe et protège à la fois le conducteur de phase et le neutre sur un seul module compact.",
+    explanation: "Le DPN coupe et protège à la fois la phase et le neutre sur un module compact.",
     svgType: "breaker"
   },
   {
     domain: "Électricité",
     question: "Comment se comporte un contacteur électromagnétique au repos (bobine non alimentée) ?",
-    options: ["Tous ses contacts basculent", "Ses contacts principaux ouverts le restent, et les contacts fermés le restent", "Il s'autobloque", "Il émet un signal sonore"],
+    options: ["Tous ses contacts basculent", "Ses contacts principaux ouverts le restent, et les fermés le restent", "Il s'autobloque", "Il émet un son"],
     correct: 1,
-    explanation: "Au repos, les ressorts de rappel maintiennent l'appareillage dans sa position initiale non alimentée.",
+    explanation: "Au repos, les ressorts de rappel maintiennent l'appareillage dans sa position initiale.",
     svgType: "contactor"
   },
   {
     domain: "Électricité",
     question: "À quoi sert un relais thermique dans un coffret de commande moteur ?",
-    options: ["À couper le circuit en cas de surcharge prolongée du moteur (échauffement)", "À régler la vitesse de rotation", "À inverser les phases", "À transformer le courant alternatif en continu"],
+    options: ["À couper le circuit en cas de surcharge prolongée du moteur", "À régler la vitesse", "À inverser les phases", "À transformer l'alternatif en continu"],
     correct: 0,
-    explanation: "Le bilame du relais thermique se déforme sous l'effet d'un surcourant prolongé et déclenche le circuit de commande.",
+    explanation: "Le bilame du relais thermique se déforme sous l'effet d'un surcourant prolongé.",
     svgType: "thermal"
   },
   {
     domain: "Électricité",
-    question: "Comment paramètre-t-on une horloge programmable (type Schneider Acti9) pour un éclairage nocturne ?",
-    options: ["En réglant les plages horaires de commutation ON/OFF selon les jours", "En mesurant la résistance des câbles", "En modifiant la fréquence du réseau", "En changeant le disjoncteur"],
+    question: "Comment paramètre-t-on une horloge programmable pour un éclairage nocturne ?",
+    options: ["En réglant les plages horaires de commutation ON/OFF", "En mesurant la résistance", "En modifiant la fréquence", "En changeant le disjoncteur"],
     correct: 0,
-    explanation: "L'horloge programmable gère des programmes temporels précis pour automatiser les départs d'éclairage.",
+    explanation: "L'horloge programmable gère des programmes temporels précis.",
     svgType: "timer"
   },
   {
     domain: "Électricité",
-    question: "Quel est l'effet d'une inversion de deux phases sur un moteur synchrone ou asynchrone triphasé ?",
-    options: ["Il s'arrête net", "Il inverse son sens de rotation", "Il double sa vitesse", "Il grille immédiatement sans disjoncter"],
+    question: "Quel est l'effet d'une inversion de deux phases sur un moteur asynchrone triphasé ?",
+    options: ["Il s'arrête net", "Il inverse son sens de rotation", "Il double sa vitesse", "Il grille sans disjoncter"],
     correct: 1,
-    explanation: "Inverser deux phases modifie l'ordre de succession des champs tournants, inversant ainsi le sens du rotor.",
+    explanation: "Inverser deux phases modifie l'ordre du champ tournant et inverse le rotor.",
     svgType: "motor"
   },
   {
@@ -208,108 +208,108 @@ const questionsData = [
     question: "Quelle est la formule fondamentale de la loi d'Ohm en courant continu ?",
     options: ["P = U × I", "U = R × I", "W = U² / R", "I = R / U"],
     correct: 1,
-    explanation: "U (Tension en Volts) est égal au produit de la Résistance (en Ohms) par l'Intensité (en Ampères).",
+    explanation: "U (Volts) est égal au produit de la Résistance par l'Intensité.",
     svgType: "formula"
   },
   {
     domain: "Électricité",
-    question: "Quel appareil utilise-t-on pour mesurer l'isolement d'un câble électrique sous haute tension de test (ex: 500V ou 1000V) ?",
-    options: ["Un multimetre classique", "Un ohmmètre de terre ou mégohmmètre", "Une pince ampèremétrique", "Un wattmètre"],
+    question: "Quel appareil mesure l'isolement d'un câble sous haute tension de test (ex: 1000V) ?",
+    options: ["Un multimetre", "Un ohmmètre de terre ou mégohmmètre", "Une pince ampèremétrique", "Un wattmètre"],
     correct: 1,
-    explanation: "Le mégohmmètre injecte une tension continue élevée pour vérifier l'absence de fuite de courant à la terre.",
+    explanation: "Le mégohmmètre injecte une tension continue élevée pour vérifier l'absence de fuite.",
     svgType: "megger"
   },
   {
     domain: "Électricité",
     question: "Qu'indique un courant de court-circuit élevé dans une installation ?",
-    options: ["Une excellente isolation", "Une liaison directe accidentelle entre phase et neutre ou phase et phase sans résistance de charge", "Une baisse anormale de la consommation", "Un fonctionnement normal en veille"],
+    options: ["Une excellente isolation", "Une liaison directe accidentelle entre phase et neutre sans résistance", "Une baisse anormale", "Un fonctionnement normal"],
     correct: 1,
-    explanation: "Le court-circuit provoque un pic d'intensité instantané très destructeur si les protections ne réagissent pas.",
+    explanation: "Le court-circuit provoque un pic d'intensité instantané très destructeur.",
     svgType: "warning"
   },
   {
     domain: "Électricité",
     question: "Quel est le rôle d'un transformateur de commande et de signalisation ?",
-    options: ["Augmenter la puissance globale", "Isoler galvaniquement le circuit de commande de la puissance et abaisser la tension (ex: 400V vers 24V)", "Convertir l'alternatif en continu", "Filtrer les harmoniques"],
+    options: ["Augmenter la puissance", "Isoler galvaniquement la commande de la puissance et abaisser la tension (ex: 24V)", "Convertir en continu", "Filtrer"],
     correct: 1,
-    explanation: "Il sécurise les circuits de commande en abaissant la tension et protège contre les perturbations directes.",
+    explanation: "Il sécurise les circuits de commande en abaissant la tension.",
     svgType: "transformer"
   },
   {
     domain: "Électricité",
     question: "Qu'est-ce qu'un schéma électrique unifilaire ?",
-    options: ["Un schéma où chaque conducteur est dessiné séparément", "Un schéma représentant les conducteurs d'un même circuit par un seul trait portant des indications", "Un schéma purement mécanique", "Un schéma sans aucun symbole normalisé"],
+    options: ["Un schéma avec chaque fil séparé", "Un schéma représentant les conducteurs d'un même circuit par un seul trait", "Un schéma mécanique", "Un schéma sans symbole"],
     correct: 1,
-    explanation: "Il simplifie la lecture globale des installations de puissance en évitant la surcharge visuelle.",
+    explanation: "Il simplifie la lecture globale des installations de puissance.",
     svgType: "schema"
   },
   {
     domain: "Électricité",
     question: "Pourquoi réalise-t-on une liaison équipotentielle ?",
-    options: ["Pour relier toutes les masses métalliques au même potentiel afin d'éviter les tensions de contact dangereuses", "Pour augmenter la vitesse du courant", "Pour alimenter les prises en 24V", "Pour réduire la facture d'électricité"],
+    options: ["Pour relier toutes les masses métalliques au même potentiel et éviter les tensions de contact", "Pour augmenter la vitesse", "Pour alimenter en 24V", "Pour réduire la facture"],
     correct: 0,
-    explanation: "La liaison équipotentielle protège les personnes contre les chocs électriques par différence de potentiel.",
+    explanation: "Elle protège les personnes contre les chocs électriques par différence de potentiel.",
     svgType: "earth"
   },
   {
     domain: "Électricité",
     question: "Quel est le principe d'action d'un interrupteur différentiel 30mA ?",
-    options: ["Il détecte un dépassement de la puissance souscrite", "Il compare le courant entrant et sortant et coupe si la différence dépasse 30mA (fuite à la terre)", "Il protège contre les courts-circuits francs", "Il régule la tension de phase"],
+    options: ["Il détecte un dépassement de puissance", "Il compare le courant entrant/sortant et coupe si la fuite dépasse 30mA", "Il protège des courts-circuits", "Il régule la tension"],
     correct: 1,
-    explanation: "Une différence de courant indique qu'une partie du courant s'échappe vers la terre (risque d'électrocution).",
+    explanation: "Une différence indique qu'une partie du courant s'échappe vers la terre (risque d'électrocution).",
     svgType: "differential"
   },
   {
     domain: "Électricité",
     question: "Comment se branche un ampèremètre dans un circuit électrique ?",
-    options: ["En dérivation aux bornes du récepteur", "En série dans le conducteur traversé par le courant à mesurer", "Entre la phase et la terre", "Directement sur la bobine du contacteur"],
+    options: ["En dérivation", "En série dans le conducteur traversé par le courant", "Entre phase et terre", "Sur la bobine"],
     correct: 1,
-    explanation: "L'ampèremètre doit être traversé par la totalité du courant mesuré, d'où un branchement impératif en série.",
+    explanation: "L'ampèremètre doit être traversé par la totalité du courant, d'où un branchement en série.",
     svgType: "meter"
   },
   {
     domain: "Électricité",
     question: "Que signifie le marquage IP21 sur un coffret électrique ?",
-    options: ["Indice de protection contre la pénétration de corps solides (>12.5mm) et de chutes verticales de gouttes d'eau", "Isolation renforcée 2100 Volts", "Indice de performance thermique", "Impédance nominale"],
+    options: ["Protection contre corps solides (>12.5mm) et gouttes d'eau verticales", "Isolation 2100 Volts", "Performance thermique", "Impédance"],
     correct: 0,
-    explanation: "L'indice IP qualifie la protection du matériel contre les intrusions solides et liquides.",
+    explanation: "L'indice IP qualifie la protection contre les intrusions solides et liquides.",
     svgType: "ip"
   },
   {
     domain: "Électricité",
-    question: "Quel composant permet de stocker temporairement de l'énergie électrostatique dans un circuit ?",
+    question: "Quel composant stocke temporairement de l'énergie électrostatique ?",
     options: ["La résistance", "Le condensateur", "L'inductance", "Le disjoncteur"],
     correct: 1,
-    explanation: "Le condensateur accumule des charges électriques entre ses armatures isolées par un diélectrique.",
+    explanation: "Le condensateur accumule des charges électriques entre ses armatures.",
     svgType: "capacitor"
   },
   {
     domain: "Électricité",
     question: "Quelle est la couleur normalisée du conducteur de protection (terre) ?",
-    options: ["Bleu clair", "Vert et Jaune", "Rouge", "Noir ou Marron"],
+    options: ["Bleu clair", "Vert et Jaune", "Rouge", "Noir"],
     correct: 1,
-    explanation: "Le bicolore vert/jaune est strictement réservé à la terre selon les normes internationales (IEC).",
+    explanation: "Le vert/jaune est strictement réservé à la terre selon les normes internationales.",
     svgType: "earth"
   },
   {
     domain: "Électricité",
     question: "Qu'est-ce qu'un relais de temporisation au repos (OFF-delay) ?",
-    options: ["Un relais dont la temporisation commence dès la coupure de la commande", "Un relais qui ne fonctionne jamais", "Un relais qui s'enclenche instantanément à l'allumage", "Un disjoncteur thermique"],
+    options: ["Un relais dont la temporisation commence dès la coupure de la commande", "Un relais inactif", "Un relais instantané", "Un disjoncteur"],
     correct: 0,
-    explanation: "Il maintient ses contacts fermés pendant un temps réglé après l'arrêt du signal de commande.",
+    explanation: "Il maintient ses contacts fermés pendant un temps réglé après l'arrêt du signal.",
     svgType: "timer"
   },
   {
     domain: "Électricité",
-    question: "Comment calcule-t-on la puissance active P en triphasé équilibré (système 400V) ?",
+    question: "Comment calcule-t-on la puissance active P en triphasé équilibré (400V) ?",
     options: ["P = U × I", "P = √3 × U × I × cos(φ)", "P = U² / R", "P = 3 × U × I"],
     correct: 1,
-    explanation: "En triphasé, le facteur de puissance cos(φ) et la racine de 3 interviennent dans le calcul de la puissance active.",
+    explanation: "En triphasé, le facteur de puissance cos(φ) et la racine de 3 interviennent.",
     svgType: "formula"
   },
   {
     domain: "Électricité",
-    question: "Quel est l'appareil indiqué pour le repérage de câbles non alimentés dans une goulotte ?",
+    question: "Quel est l'appareil indiqué pour le repérage de câbles non alimentés ?",
     options: ["Un testeur de continuité / bip-mètre", "Un fréquencemètre", "Un wattmètre", "Un gradateur"],
     correct: 0,
     explanation: "Le testeur de continuité vérifie si un conducteur est bouclé ou interrompu.",
@@ -318,65 +318,65 @@ const questionsData = [
   {
     domain: "Électricité",
     question: "Quelle protection est indispensable pour les installations extérieures soumises aux intempéries ?",
-    options: ["Un coffret IP55 ou IP65 minimum", "Un simple boîtier plastique ouvert", "Une protection en bois vernis", "Aucune protection particulière"],
+    options: ["Un coffret IP55 ou IP65 minimum", "Un boîtier ouvert", "Du bois vernis", "Aucune"],
     correct: 0,
-    explanation: "Les indices élevés (IP55/65) garantissent l'étanchéité aux poussières et aux projections d'eau puissantes.",
+    explanation: "Les indices élevés garantissent l'étanchéité aux poussières et projections d'eau.",
     svgType: "ip"
   },
 
-  // --- MECANIQUE (20 questions) ---
+  // --- MECANIQUE ---
   {
     domain: "Mécanique",
     question: "Quel est le rôle principal d'un roulement à billes dans un mécanisme ?",
-    options: ["Freiner l'arbre en rotation", "Guider un arbre en rotation en réduisant les frottements mécaniques", "Augmenter la vitesse du moteur par 10", "Transmettre un signal électrique"],
+    options: ["Freiner l'arbre", "Guider un arbre en rotation en réduisant les frottements", "Augmenter la vitesse par 10", "Transmettre un signal"],
     correct: 1,
-    explanation: "Le roulement minimise le couple de frottement entre les pièces fixes et tournantes.",
+    explanation: "Le roulement minimise le couple de frottement entre pièces fixes et tournantes.",
     svgType: "bearing"
   },
   {
     domain: "Mécanique",
-    question: "Qu'appelle-t-on 'ajustement avec serrage' (ou incertain/serré) ?",
-    options: ["Un montage où l'arbre est plus petit que l'alésage", "Un montage où la cote maximale de l'arbre est supérieure ou égale à la cote minimale de l'alésage", "Un montage avec beaucoup de jeu", "Un assemblage par collage souple"],
+    question: "Qu'appelle-t-on 'ajustement avec serrage' ?",
+    options: ["Un arbre plus petit que l'alésage", "Un montage où la cote de l'arbre est supérieure ou égale à l'alésage", "Un montage avec jeu", "Un collage souple"],
     correct: 1,
-    explanation: "Le serrage nécessite un effort (presse ou chaud/froid) pour emmancher les pièces ensemble.",
+    explanation: "Le serrage nécessite un effort (presse ou chaud/froid) pour emmancher les pièces.",
     svgType: "fit"
   },
   {
     domain: "Mécanique",
-    question: "Quel instrument de mesure de précision permet de lire le centième ou le millième de millimètre ?",
-    options: ["Le mètre ruban", "Le pied à coulisse vernier / micromètre", "L'équerre de maçon", "Le fil à plomb"],
+    question: "Quel instrument de mesure de précision permet de lire le centième ou millième de millimètre ?",
+    options: ["Le mètre ruban", "Le pied à coulisse / micromètre", "L'équerre", "Le fil à plomb"],
     correct: 1,
-    explanation: "Le micromètre (palmer) et le pied à coulisse garantissent des contrôles dimensionnels rigoureux.",
+    explanation: "Le micromètre garantit des contrôles dimensionnels très rigoureux.",
     svgType: "caliper"
   },
   {
     domain: "Mécanique",
     question: "Quel est l'effet d'une lubrification insuffisante sur un réducteur à engrenages ?",
-    options: ["Une baisse de température", "Un grippage, une usure abrasive prononcée et une surchauffe des dents", "Une augmentation du rendement", "Un nettoyage automatique"],
+    options: ["Une baisse de température", "Un grippage, usure abrasive prononcée et surchauffe", "Une augmentation du rendement", "Un nettoyage automatique"],
     correct: 1,
-    explanation: "Sans film d'huile séparant les flancs de dents, le contact métal sur métal détruit rapidement la mécanique.",
+    explanation: "Sans film d'huile séparant les dents, le contact métal sur métal détruit la mécanique.",
     svgType: "oil"
   },
   {
     domain: "Mécanique",
     question: "À quoi sert une clavette sur un arbre de transmission ?",
-    options: ["À guider axialement l'arbre", "À transmettre un couple de rotation entre l'arbre et le moyeu (poulie, pignon)", "À assurer l'étanchéité", "À freiner l'arbre en cas d'urgence"],
+    options: ["Guider axialement", "Transmettre un couple de rotation entre l'arbre et le moyeu (poulie, pignon)", "Assurer l'étanchéité", "Freiner en urgence"],
     correct: 1,
-    explanation: "La clavette encastre le moyeu sur l'arbre en rotation pour éviter tout patinage angulaire.",
+    explanation: "La clavette encastre le moyeu sur l'arbre en rotation pour éviter tout patinage.",
     svgType: "key"
   },
   {
     domain: "Mécanique",
-    question: "Qu'est-ce qu'un défaut de balourd sur un ventilateur ou un rotor tournant à haute vitesse ?",
-    options: ["Une répartition dissymétrique des masses créant des vibrations destructrices", "Un excès de peinture", "Une baisse de tension électrique", "Une usure normale des charbons"],
+    question: "Qu'est-ce qu'un défaut de balourd sur un rotor tournant à haute vitesse ?",
+    options: ["Une répartition dissymétrique des masses créant des vibrations destructrices", "Un excès de peinture", "Une baisse de tension", "Une usure des charbons"],
     correct: 0,
-    explanation: "Le balourd engendre des forces centrifuges oscillantes provoquant l'usure prématurée des paliers.",
+    explanation: "Le balourd engendre des forces centrifuges oscillantes provoquant l'usure des paliers.",
     svgType: "vibration"
   },
   {
     domain: "Mécanique",
-    question: "Quel composant d'étanchéité dynamique est couramment utilisé sur les arbres tournants pour retenir l'huile ?",
-    options: ["Un joint torique statique", "Une bague à lèvres radiale (type joint Simmer)", "Un joint plat en carton", "De la filasse de plomberie"],
+    question: "Quel composant d'étanchéité dynamique retient l'huile sur les arbres tournants ?",
+    options: ["Un joint torique statique", "Une bague à lèvres radiale (joint Simmer)", "Un joint plat", "De la filasse"],
     correct: 1,
     explanation: "La bague à lèvres exerce une pression contrôlée sur l'arbre grâce à un ressort torique.",
     svgType: "seal"
@@ -384,121 +384,121 @@ const questionsData = [
   {
     domain: "Mécanique",
     question: "Quelle est l'utilité d'une clé dynamométrique lors du serrage de vis critiques ?",
-    options: ["Serrer le plus fort possible sans casser la clé", "Appliquer un couple de serrage précis et préconisé par le constructeur", "Desserrer les vis rouillées", "Mesurer la dureté du métal"],
+    options: ["Serrer très fort", "Appliquer un couple de serrage précis préconisé par le constructeur", "Desserrer", "Mesurer la dureté"],
     correct: 1,
-    explanation: "Un serrage au couple garantit l'absence de rupture par fatigue ou de desserrage en service.",
+    explanation: "Un serrage au couple garantit l'absence de rupture par fatigue ou desserrage.",
     svgType: "torque"
   },
   {
     domain: "Mécanique",
     question: "Qu'est-ce que la fatigue des métaux ?",
-    options: ["Le vieillissement de la peinture", "L'endommagement progressif du matériau sous l'effet de sollicitations cycliques répétées", "La fonte du métal à basse température", "L'oxydation dans l'eau douce"],
+    options: ["Le vieillissement de la peinture", "L'endommagement progressif sous l'effet de sollicitations cycliques répétées", "La fonte du métal", "L'oxydation dans l'eau"],
     correct: 1,
-    explanation: "Des micro-fissures naissent et se propagent sous l'effet des charges alternées jusqu'à la rupture soudaine.",
+    explanation: "Des micro-fissures naissent et se propagent jusqu'à la rupture soudaine.",
     svgType: "crack"
   },
   {
     domain: "Mécanique",
-    question: "Quel type d'engrenage transmet un mouvement entre des axes concourants (généralement à 90°) ?",
-    options: ["Un engrenage cylindrique droit", "Un engrenage conique", "Une crémaillère", "Une vis sans fin simple"],
+    question: "Quel type d'engrenage transmet un mouvement entre axes concourants (à 90°) ?",
+    options: ["Un engrenage cylindrique droit", "Un engrenage conique", "Une crémaillère", "Une vis sans fin"],
     correct: 1,
-    explanation: "Les roues coniques permettent de renvoyer le mouvement selon un angle (souvent d'équerre).",
+    explanation: "Les roues coniques permettent de renvoyer le mouvement selon un angle.",
     svgType: "gear"
   },
   {
     domain: "Mécanique",
     question: "Quel est le rôle d'un réducteur mécanique de vitesse ?",
-    options: ["Multiplier la vitesse et diviser le couple", "Réduire la vitesse de rotation tout en multipliant le couple disponible", "Conserver exactement la même vitesse et le même couple", "Changer la nature du courant"],
+    options: ["Multiplier la vitesse", "Réduire la vitesse de rotation tout en multipliant le couple disponible", "Conserver vitesse et couple", "Changer le courant"],
     correct: 1,
-    explanation: "Grâce au rapport de réduction, le couple mécanique de sortie est considérablement augmenté.",
+    explanation: "Grâce au rapport de réduction, le couple de sortie est considérablement augmenté.",
     svgType: "gear"
   },
   {
     domain: "Mécanique",
-    question: "Comment qualifie-t-on une liaison mécanique qui empêche tout mouvement relatif entre deux pièces ?",
+    question: "Comment qualifie-t-on une liaison mécanique qui empêche tout mouvement relatif ?",
     options: ["Une liaison pivot", "Une liaison encastrement (rigide)", "Une liaison glissière", "Une liaison rotule"],
     correct: 1,
-    explanation: "L'encastrement bloque les 6 degrés de liberté possibles entre les solides.",
+    explanation: "L'encastrement bloque les 6 degrés de liberté possibles entre solides.",
     svgType: "mechanics"
   },
   {
     domain: "Mécanique",
-    question: "Quel essai mécanique permet de déterminer la résistance à la traction et la limite d'élasticité d'un acier ?",
-    options: ["L'essai de dureté Brinell", "L'essai de traction destructif en laboratoire", "L'essai de flexion simple à la main", "L'essai d'étanchéité pneumatique"],
+    question: "Quel essai mécanique détermine la résistance à la traction et la limite d'élasticité ?",
+    options: ["L'essai de dureté Brinell", "L'essai de traction destructif en laboratoire", "L'essai de flexion à la main", "L'essai pneumatique"],
     correct: 1,
-    explanation: "L'éprouvette est étirée sur une machine de traction pour tracer sa courbe caractéristique contrainte-déformation.",
+    explanation: "L'éprouvette est étirée sur une machine pour tracer sa courbe contrainte-déformation.",
     svgType: "test"
   },
   {
     domain: "Mécanique",
     question: "Qu'est-ce qu'un accouplement élastique dans une ligne d'arbres ?",
-    options: ["Un accouplement rigide en fonte", "Un organe transmettant le couple tout en absorbant de petits désalignements et en filtrant les chocs", "Un ressort de suspension", "Une courroie trapézoïdale"],
+    options: ["Un accouplement rigide", "Un organe transmettant le couple tout en absorbant les désalignements et chocs", "Un ressort", "Une courroie"],
     correct: 1,
-    explanation: "Il protège les machines entraînées et motrices des à-coups et vibrations.",
+    explanation: "Il protège les machines des à-coups et des vibrations.",
     svgType: "coupling"
   },
   {
     domain: "Mécanique",
-    question: "Pourquoi réalise-t-on un traitement thermique de trempe sur une pièce en acier ?",
-    options: ["Pour la rendre tendre et facile à plier", "Pour augmenter sa dureté superficielle et sa résistance à l'usure", "Pour l'alléger en poids", "Pour changer sa couleur en noir"],
+    question: "Pourquoi réalise-t-on un traitement thermique de trempe sur l'acier ?",
+    options: ["Pour le rendre tendre", "Pour augmenter sa dureté superficielle et sa résistance à l'usure", "Pour l'alléger", "Pour le noircir"],
     correct: 1,
-    explanation: "La trempe modifie la structure cristalline (formation de martensite) pour durcir le métal.",
+    explanation: "La trempe modifie la structure cristalline pour durcir le métal.",
     svgType: "heat"
   },
   {
     domain: "Mécanique",
-    question: "Quel est l'inconvénient d'un jeu excessif dans les dentures d'un réducteur ( backlash ) ?",
-    options: ["Un blocage immédiat", "Des à-coups, du bruit et des chocs destructeurs lors des inversions de marche", "Une surconsommation d'huile", "Une augmentation du couple utile"],
+    question: "Quel est l'inconvénient d'un jeu excessif dans les dentures d'un réducteur ?",
+    options: ["Un blocage immédiat", "Des à-coups, du bruit et des chocs destructeurs lors des inversions", "Une surconsommation d'huile", "Une augmentation du couple"],
     correct: 1,
-    explanation: "Le jeu excessif provoque des chocs répétés sur les flancs de dents lors des démarrages et arrêts.",
+    explanation: "Le jeu excessif provoque des chocs répétés sur les flancs de dents.",
     svgType: "gear"
   },
   {
     domain: "Mécanique",
     question: "Qu'indique l'apparition de traces de rouille rouge sur un assemblage boulonné serré ?",
-    options: ["Une bonne protection anticorrosion", "Un mouvement relatif (fretting-corrosion) ou une infiltration d'humidité due à un desserrage", "Un excès de graisse propre", "Une surchauffe électrique"],
+    options: ["Une bonne protection", "Un mouvement relatif ou une infiltration d'humidité due à un desserrage", "Un excès de graisse", "Une surchauffe électrique"],
     correct: 1,
-    explanation: "Le frottement entre spires ou sous la tête de vis élimine la protection et oxyde le métal.",
+    explanation: "Le frottement élimine la protection et oxyde le métal.",
     svgType: "rust"
   },
   {
     domain: "Mécanique",
-    question: "Quel type de courroie offre la meilleure adhérence et transmission de puissance dans les gorges de poulies industrielles ?",
-    options: ["La courroie plate lisse", "La courroie trapézoïdale", "Une ficelle en nylon", "Une chaîne à maillons"],
+    question: "Quel type de courroie offre la meilleure adhérence dans les gorges de poulies ?",
+    options: ["La courroie plate", "La courroie trapézoïdale", "Une ficelle", "Une chaîne"],
     correct: 1,
-    explanation: "Le profil trapézoïdal provoque un arc-boutement dans la gorge augmentant l'effort transmissible.",
+    explanation: "Le profil trapézoïdal provoque un arc-boutement augmentant l'effort transmissible.",
     svgType: "belt"
   },
   {
     domain: "Mécanique",
     question: "Qu'appelle-t-on la 'cémentation' d'une pièce mécanique ?",
-    options: ["Un collage à la colle forte", "Un traitement thermochimique d'enrichissement en carbone de la couche superficielle", "Un nettoyage au ciment liquide", "Un meulage grossier"],
+    options: ["Un collage", "Un traitement thermochimique d'enrichissement en carbone de la surface", "Un nettoyage au ciment", "Un meulage"],
     correct: 1,
-    explanation: "On obtient un cœur tenu et une surface très dure résistante aux frottements.",
+    explanation: "On obtient un cœur tenace et une surface très dure résistante aux frottements.",
     svgType: "heat"
   },
   {
     domain: "Mécanique",
     question: "Quel instrument vérifie le parallélisme et le faux-rond d'un arbre en rotation ?",
-    options: ["Un comparateur à cadran sur pied mag", "Un thermomètre laser", "Un pied à coulisse plastique", "Un pèse-lettre"],
+    options: ["Un comparateur à cadran sur pied mag", "Un thermomètre", "Un pied plastique", "Un pèse-lettre"],
     correct: 0,
-    explanation: "Le comparateur mesure avec une grande précision les écarts par rapport à une position de référence.",
+    explanation: "Le comparateur mesure avec une grande précision les écarts par rapport à une référence.",
     svgType: "gauge"
   },
 
-  // --- NAVALE (20 questions) ---
+  // --- NAVALE ---
   {
     domain: "Navale",
     question: "Quel est le rôle de la quille sur un navire ?",
-    options: ["Servir de réservoir de carburant", "Constituer la pièce vertébrale longitudinale de la structure inférieure assurant la rigidité longitudinale", "Porter l'ancre principale", "Guider les fumées d'échappement"],
+    options: ["Servir de réservoir", "Constituer la pièce vertébrale longitudinale assurant la rigidité de la structure inférieure", "Porter l'ancre", "Guider les fumées"],
     correct: 1,
-    explanation: "La quille est la poutre principale de fond sur laquelle s'articulent les cadres et les tôles de bordure.",
+    explanation: "La quille est la poutre principale de fond sur laquelle s'articulent les cadres.",
     svgType: "hull"
   },
   {
     domain: "Navale",
     question: "Que désigne le terme 'franc-bord' d'un navire ?",
-    options: ["La distance verticale entre la flottaison et le pont principal étanche (pont de franc-bord)", "La hauteur totale du mât", "La largeur maximale du navire (maître-bau)", "Le tirant d'eau minimal à vide"],
+    options: ["La distance verticale entre la flottaison et le pont principal étanche", "La hauteur du mât", "La largeur maximale", "Le tirant d'eau"],
     correct: 0,
     explanation: "Le franc-bord garantit la réserve de flottabilité et empêche l'eau de submerger le pont.",
     svgType: "ship"
@@ -506,150 +506,150 @@ const questionsData = [
   {
     domain: "Navale",
     question: "Qu'est-ce que la stabilité transversale initiale d'un navire (hauteur métacentrique GM) ?",
-    options: ["La vitesse maximale par mer de face", "La mesure de la capacité du navire à redresser un gîte transversale", "Le poids total des marchandises", "La profondeur sous la quille"],
+    options: ["La vitesse maximale", "La mesure de la capacité du navire à redresser une gîte transversale", "Le poids total", "La profondeur"],
     correct: 1,
-    explanation: "Un GM positif suffisant assure le retour spontané du navire à sa position droite après une inclinaison.",
+    explanation: "Un GM positif suffisant assure le retour spontané du navire à sa position droite.",
     svgType: "stability"
   },
   {
     domain: "Navale",
-    question: "Quel système de sécurité incendie fixe est principalement installé dans la salle des machines d'un navire moderne ?",
-    options: ["Un seau de sable", "Une installation fixe d'extinction par gaz carbonique (CO2) ou brouillard d'eau haute pression", "Un tuyau d'arrosage simple", "Un extincteur à eau pulvérisée de 6kg"],
+    question: "Quel système d'extinction fixe est principalement installé dans la salle des machines ?",
+    options: ["Un seau de sable", "Une installation fixe par gaz carbonique (CO2) ou brouillard d'eau", "Un tuyau d'arrosage", "Un extincteur 6kg"],
     correct: 1,
-    explanation: "Le CO2 étouffe l'incendie par inondation totale du local machine hermétiquement fermé.",
+    explanation: "Le CO2 étouffe l'incendie par inondation totale du local hermétique.",
     svgType: "fire"
   },
   {
     domain: "Navale",
     question: "À quoi sert le système de barre et le safran d'un navire ?",
-    options: ["À régler la vitesse des hélices", "À orienter le flux d'eau dévié pour assurer la gouverne et les changements de cap", "À remonter les ancres", "À produire de l'eau douce"],
+    options: ["Régler la vitesse", "Orienter le flux d'eau pour assurer la gouverne et les changements de cap", "Remonter les ancres", "Produire de l'eau douce"],
     correct: 1,
-    explanation: "Le safran crée une force hydrodynamique transversale faisant pivoter la coque autour de son centre de gravité.",
+    explanation: "Le safran crée une force hydrodynamique faisant pivoter la coque.",
     svgType: "rudder"
   },
   {
     domain: "Navale",
     question: "Qu'appelle-t-on le 'tirant d'eau' d'un navire ?",
-    options: ["La distance verticale entre la ligne de flottaison et le point le plus bas de la carène (quille)", "La distance entre le sommet de la cheminée et la mer", "La longueur hors tout", "La largeur de la coque"],
+    options: ["La distance verticale entre la flottaison et le point le plus bas de la carène (quille)", "La distance cheminée-mer", "La longueur", "La largeur"],
     correct: 0,
-    explanation: "Il détermine la profondeur minimale d'eau requise pour que le navire ne talonne pas.",
+    explanation: "Il détermine la profondeur minimale d'eau requise pour ne pas talonner.",
     svgType: "draft"
   },
   {
     domain: "Navale",
-    question: "Quel équipement de pont sert au mouillage et à la levée des ancres par chaînes ?",
-    options: ["Le treuil de remorquage", "Le guindeau", "Le cabestan arrière", "La grue de charge"],
+    question: "Quel équipement de pont sert au mouillage et à la levée des ancres ?",
+    options: ["Le treuil de remorquage", "Le guindeau", "Le cabestan", "La grue"],
     correct: 1,
-    explanation: "Le guindeau est le treuil à axe horizontal muni d'un barbotin adapté aux maillons de la chaîne d'ancre.",
+    explanation: "Le guindeau est muni d'un barbotin adapté aux maillons de la chaîne.",
     svgType: "anchor"
   },
   {
     domain: "Navale",
     question: "Quel est le rôle des ballasts à bord d'un navire ?",
-    options: ["Stocker le carburant lourd pour les moteurs", "Remplir ou vider des réservoirs d'eau de mer pour ajuster l'assiette, la gîte et l'immersion", "Alimenter les douches de l'équipage", "Refroidir les cabines climatisées"],
+    options: ["Stocker le carburant", "Remplir ou vider des réservoirs d'eau de mer pour ajuster l'assiette et la gîte", "Alimenter les douches", "Refroidir la climatisation"],
     correct: 1,
-    explanation: "Les ballasts gèrent le centrage des masses et l'enfoncement optimal du navire selon les charges.",
+    explanation: "Les ballasts gèrent le centrage des masses et l'enfoncement optimal.",
     svgType: "ballast"
   },
   {
     domain: "Navale",
     question: "Qu'est-ce que la 'carène' d'un navire ?",
-    options: ["La partie de la coque située entièrement sous la ligne de flottaison", "La passerelle de navigation", "Le logement du capitaine", "La structure des mâts"],
+    options: ["La partie de la coque située entièrement sous la ligne de flottaison", "La passerelle", "Le logement", "Les mâts"],
     correct: 0,
     explanation: "C'est la portion immergée de la coque qui subit la poussée d'Archimède.",
     svgType: "hull"
   },
   {
     domain: "Navale",
-    question: "Pourquoi applique-t-on une peinture antifouling (salissures) sur la coque sous-marine ?",
-    options: ["Pour embellir la couleur de la tôle", "Pour empêcher la fixation et la prolifération d'organismes marins (algues, coquillages)", "Pour augmenter la température de l'eau", "Pour souder les tôles entre elles"],
+    question: "Pourquoi applique-t-on une peinture antifouling sur la coque sous-marine ?",
+    options: ["Pour embellir", "Pour empêcher la fixation et la prolifération d'organismes marins (algues, coquillages)", "Pour augmenter la température", "Pour souder"],
     correct: 1,
-    explanation: "L'antifouling protège contre le biofouling qui freine l'avancement et augmente la consommation de carburant.",
+    explanation: "L'antifouling protège contre le biofouling qui freine l'avancement.",
     svgType: "paint"
   },
   {
     domain: "Navale",
-    question: "Quel est l'objectif du système de 'séparation des eaux bilges' (hydrocarbures / eau) ?",
-    options: ["Recycler l'eau de pluie", "Traiter les eaux de fond de cale pour rejeter une eau épurée respectant les normes MARPOL (<15 ppm)", "Alimenter les chaudières principales", "Laver le pont supérieur"],
+    question: "Quel est l'objectif du système de 'séparation des eaux de bilges' ?",
+    options: ["Recycler l'eau de pluie", "Traiter les fonds de cale pour rejeter une eau épurée conforme aux normes (<15 ppm)", "Alimenter les chaudières", "Laver le pont"],
     correct: 1,
-    explanation: "Le séparateur d'hydrocarbures évite toute pollution marine accidentelle par les rejets de machines.",
+    explanation: "Le séparateur évite toute pollution marine accidentelle.",
     svgType: "bilge"
   },
   {
     domain: "Navale",
     question: "Qu'est-ce que la gîte d'un navire ?",
-    options: ["Une inclinaison longitudinale permanente (trim)", "Une inclinaison transversale permanente du navire", "Un mouvement de tangage par forte houle", "Une vitesse excessive en virage"],
+    options: ["Une inclinaison longitudinale", "Une inclinaison transversale permanente du navire", "Un tangage", "Une vitesse excessive"],
     correct: 1,
-    explanation: "La gîte est un angle permanent sur bâbord ou tribord, souvent dû à une mauvaise répartition des charges.",
+    explanation: "La gîte est un angle permanent sur bâbord ou tribord.",
     svgType: "stability"
   },
   {
     domain: "Navale",
-    question: "Quel système de propulsion utilise une tuyère orientable ou un jet d'eau orienté à haute vitesse ?",
-    options: ["L'hélice conventionnelle fixe", "Le propulseur azimutal ou hydrojet", "La voile rigide", "La roue à aubes"],
+    question: "Quel système de propulsion utilise une tuyère orientable ou un jet d'eau à haute vitesse ?",
+    options: ["L'hélice fixe", "Le propulseur azimutal ou hydrojet", "La voile", "La roue à aubes"],
     correct: 1,
-    explanation: "Les propulseurs azimutaux ou hydrojets procurent une excellente manœuvrabilité dans toutes les directions.",
+    explanation: "Ces propulseurs procurent une excellente manœuvrabilité.",
     svgType: "propeller"
   },
   {
     domain: "Navale",
     question: "Que signifie le terme 'maître-bau' en architecture navale ?",
-    options: ["La longueur totale du navire", "La largeur maximale hors-tout du navire", "La hauteur maximale du mât", "Le poids lège du navire"],
+    options: ["La longueur totale", "La largeur maximale hors-tout du navire", "La hauteur du mât", "Le poids lège"],
     correct: 1,
-    explanation: "Le maître-bau correspond au maître-couple, c'est-à-dire la section transversale la plus large de la coque.",
+    explanation: "Il correspond à la section transversale la plus large de la coque.",
     svgType: "ship"
   },
   {
     domain: "Navale",
-    question: "Quel organe de sécurité permet d'éviter l'envahissement du navire par les tuyauteries traversant la coque sous l'eau ?",
-    options: ["Des vannes de coque quart de tour robustes (vannes de sea-chest)", "Des bouchons en bois tendres", "Un simple tuyau en plastique souple", "Des colliers de serrage en fer"],
+    question: "Quel organe de sécurité évite l'envahissement par les tuyauteries sous la coque ?",
+    options: ["Des vannes de coque quart de tour robustes (sea-chest)", "Des bouchons en bois", "Un tuyau souple", "Des colliers en fer"],
     correct: 0,
-    explanation: "Les vannes de coque (prises d'eau de mer et évacuations) doivent être certifiées et accessibles en permanence.",
+    explanation: "Les vannes de coque doivent être certifiées et accessibles en permanence.",
     svgType: "valve"
   },
   {
     domain: "Navale",
     question: "Quel est le principe physique fondamental qui permet à un navire de flotter ?",
-    options: ["La loi de Newton sur l'inertie", "La poussée d'Archimède (le poids du volume d'eau déplacé est égal au poids total du navire)", "La force centrifuge", "La pression atmosphérique"],
+    options: ["La loi de Newton", "La poussée d'Archimède (poids du volume d'eau déplacé égal au poids du navire)", "La force centrifuge", "La pression atmosphérique"],
     correct: 1,
-    explanation: "Le navire flotte car sa masse volumique globale est inférieure à celle de l'eau de mer grâce au volume d'air de ses emménagements.",
+    explanation: "Le navire flotte car sa masse volumique globale est inférieure à celle de l'eau.",
     svgType: "archimedes"
   },
   {
     domain: "Navale",
-    question: "À quoi sert un propulseur d'étrave (bow-thruster) ? ",
-    options: ["À avancer en marche arrière plus vite", "À faciliter les manœuvres de port en faisant pivoter l'avant du navire latéralement sans avancer", "À stabiliser le roulis en haute mer", "À produire de l'électricité d'urgence"],
+    question: "À quoi sert un propulseur d'étrave (bow-thruster) ?",
+    options: ["Avancer en marche arrière", "Faciliter les manœuvres de port en faisant pivoter l'avant latéralement", "Stabiliser le roulis", "Produire de l'électricité"],
     correct: 1,
-    explanation: "Le tunnel transversal équipé d'une hélice à l'avant aide grandement les amarrages et appareillages serrés.",
+    explanation: "Le tunnel transversal à l'avant aide grandement les amarrages serrés.",
     svgType: "thruster"
   },
   {
     domain: "Navale",
-    question: "Qu'est-ce que le 'vivier' ou 'saumon' de gouverne ?",
-    options: ["Une réserve de poissons frais", "L'ensemble de la mèche et de l'axe de transmission du safran", "Le local des pompes à incendie", "Le compartiment des compresseurs"],
+    question: "Qu'est-ce que la mèche de gouverne ?",
+    options: ["Une réserve", "L'axe de transmission rigide reliant la commande au safran", "Le local incendie", "Un compresseur"],
     correct: 1,
-    explanation: "Il s'agit des éléments robustes encaissant les efforts hydrodynamiques du gouvernail.",
+    explanation: "C'est l'élément robuste encaissant les efforts hydrodynamiques du gouvernail.",
     svgType: "rudder"
   },
   {
     domain: "Navale",
-    question: "Qu'est-ce que la cloison étanche transversale principale ?",
-    options: ["Une simple cloison de cabine en bois", "Une paroi structurelle résistante cloisonnant le navire pour empêcher la propagation d'une voie d'eau ou d'un incendie", "Le plancher de la passerelle", "Le toit de la timonerie"],
+    question: "Qu'est-ce qu'une cloison étanche transversale principale ?",
+    options: ["Une cloison en bois", "Une paroi structurelle cloisonnant le navire pour empêcher la propagation d'une voie d'eau ou d'un feu", "Le plancher", "Le toit"],
     correct: 1,
-    explanation: "Le cloisonnement étanche compartimente la coque pour satisfaire aux critères de survivabilité après avarie.",
+    explanation: "Le cloisonnement étanche compartimente la coque pour assurer la survivabilité après avarie.",
     svgType: "bulkhead"
   },
   {
     domain: "Navale",
-    question: "Quel document officiel à bord consigne l'ensemble des observations nautiques, machines et de sécurité ?",
-    options: ["Le journal de bord (et livre de machine)", "Le carnet de chèques du bord", "Le manuel de cuisine", "Le catalogue des pièces de rechange"],
+    question: "Quel document officiel consigne l'ensemble des observations nautiques et machines ?",
+    options: ["Le journal de bord (et livre de machine)", "Le carnet de chèques", "Le manuel de cuisine", "Le catalogue pièces"],
     correct: 0,
-    explanation: "Le journal de bord est un registre légal obligatoire consignant les événements majeurs de la navigation et des quarts.",
+    explanation: "Le journal de bord est un registre légal obligatoire.",
     svgType: "logbook"
   }
 ];
 
-// État global de l'application
+// État du quiz
 let currentQuiz = [];
 let currentIndex = 0;
 let score = 0;
@@ -657,7 +657,7 @@ let userAnswers = [];
 let timerInterval = null;
 let timeLeft = 30;
 
-// Éléments du DOM
+// Éléments DOM
 const homeScreen = document.getElementById('home-screen');
 const quizScreen = document.getElementById('quiz-screen');
 const resultScreen = document.getElementById('result-screen');
@@ -666,53 +666,30 @@ const restartBtn = document.getElementById('restart-btn');
 const questionText = document.getElementById('question-text');
 const optionsContainer = document.getElementById('options-container');
 const progressText = document.getElementById('progress-text');
-const progressBar = document.getElementById('progress-bar');
+const progressBar = document.getElementById('progress');
 const timerText = document.getElementById('timer-text');
 const scoreText = document.getElementById('score-text');
 const feedbackText = document.getElementById('feedback-text');
-const correctionsContainer = document.getElementById('corrections-container');
+const correctionContainer = document.getElementById('correction-container');
 const imageContainer = document.getElementById('image-container');
 
-// Générateur d'illustrations SVG techniques vectorielles intégrées
+// Illustrations SVG
 function getTechnicalSvg(type) {
-  switch(type) {
-    case 'valve':
-    case 'pressure':
-      return `<svg viewBox="0 0 200 120" width="100%" height="100%"><rect width="200" height="120" rx="10" fill="#1e293b"/><path d="M40 60 H80 L100 40 L120 60 H160" stroke="#38bdf8" stroke-width="6" fill="none" stroke-linecap="round"/><circle cx="100" cy="40" r="15" fill="#0ea5e9"/><rect x="90" y="15" width="20" height="15" rx="3" fill="#cbd5e1"/><path d="M70 85 H130 V95 H70 Z" fill="#334155" stroke="#64748b" stroke-width="2"/><text x="100" y="110" fill="#94a3b8" font-size="10" text-anchor="middle">SCHÉMA HYDRAULIQUE</text></svg>`;
-    case 'accumulator':
-    case 'pump':
-      return `<svg viewBox="0 0 200 120" width="100%" height="100%"><rect width="200" height="120" rx="10" fill="#1e293b"/><rect x="75" y="25" width="50" height="70" rx="25" fill="none" stroke="#38bdf8" stroke-width="5"/><line x1="100" y1="25" x2="100" y2="95" stroke="#ef4444" stroke-width="3" stroke-dasharray="4,4"/><circle cx="100" cy="25" r="8" fill="#f59e0b"/><text x="100" y="110" fill="#94a3b8" font-size="10" text-anchor="middle">ACCUMULATEUR / POMPE</text></svg>`;
-    case 'breaker':
-    case 'contactor':
-    case 'thermal':
-    case 'timer':
-      return `<svg viewBox="0 0 200 120" width="100%" height="100%"><rect width="200" height="120" rx="10" fill="#0f172a"/><rect x="65" y="20" width="70" height="80" rx="6" fill="#334155" stroke="#38bdf8" stroke-width="3"/><line x1="100" y1="20" x2="100" y2="15" stroke="#38bdf8" stroke-width="4"/><line x1="100" y1="100" x2="100" y2="105" stroke="#38bdf8" stroke-width="4"/><path d="M80 50 L120 70" stroke="#ef4444" stroke-width="5" stroke-linecap="round"/><circle cx="80" cy="50" r="5" fill="#38bdf8"/><circle cx="120" cy="70" r="5" fill="#38bdf8"/><text x="100" y="115" fill="#94a3b8" font-size="10" text-anchor="middle">APPAREILLAGE ÉLECTRIQUE</text></svg>`;
-    case 'bearing':
-    case 'gear':
-      return `<svg viewBox="0 0 200 120" width="100%" height="100%"><rect width="200" height="120" rx="10" fill="#1e293b"/><circle cx="100" cy="60" r="35" fill="none" stroke="#64748b" stroke-width="8"/><circle cx="100" cy="60" r="18" fill="none" stroke="#38bdf8" stroke-width="5"/><circle cx="100" cy="60" r="8" fill="#334155"/><path d="M100 25 V15 M100 95 V105 M65 60 H55 M145 60 H135" stroke="#38bdf8" stroke-width="4" stroke-linecap="round"/><text x="100" y="112" fill="#94a3b8" font-size="10" text-anchor="middle">ROULEMENT / MÉCANIQUE</text></svg>`;
-    case 'ship':
-    case 'hull':
-    case 'stability':
-      return `<svg viewBox="0 0 200 120" width="100%" height="100%"><rect width="200" height="120" rx="10" fill="#0f172a"/><path d="M30 60 C50 85 150 85 170 60 L150 90 H50 Z" fill="#0ea5e9"/><line x1="20" y1="60" x2="180" y2="60" stroke="#38bdf8" stroke-width="2" stroke-dasharray="6,3"/><rect x="85" y="30" width="30" height="30" fill="#cbd5e1"/><text x="100" y="110" fill="#94a3b8" font-size="10" text-anchor="middle">ARCHITECTURE NAVALE</text></svg>`;
-    default:
-      return `<svg viewBox="0 0 200 120" width="100%" height="100%"><rect width="200" height="120" rx="10" fill="#1e293b"/><circle cx="100" cy="60" r="30" fill="none" stroke="#38bdf8" stroke-width="6"/><path d="M85 60 L95 70 L125 40" stroke="#22c55e" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="100" y="110" fill="#94a3b8" font-size="10" text-anchor="middle">EXPERT TECHNIQUE</text></svg>`;
-  }
+  return `<svg viewBox="0 0 200 100" width="100%" height="120"><rect width="200" height="100" rx="8" fill="#1e293b"/><circle cx="100" cy="50" r="25" fill="none" stroke="#38bdf8" stroke-width="4"/><text x="100" y="55" fill="#38bdf8" font-size="10" text-anchor="middle">SCHÉMA TECHNIQUE</text></svg>`;
 }
 
-// Démarrer le quiz selon le domaine choisi
-function startQuiz(selectedDomain) {
-  // Filtrer les questions selon le domaine cliqué
-  const filteredQuestions = questionsData.filter(q => q.domain === selectedDomain);
-  
-  // Mélanger et prendre jusqu'à 20 questions du domaine
-  currentQuiz = [...filteredQuestions].sort(() => 0.5 - Math.random()).slice(0, 20);
+// Démarrer le quiz
+function startQuiz(domain) {
+  const filtered = questionsData.filter(q => q.domain === domain);
+  currentQuiz = [...filtered].sort(() => 0.5 - Math.random()).slice(0, 20);
   currentIndex = 0;
   score = 0;
   userAnswers = [];
 
-  homeScreen.classList.remove('active');
-  quizScreen.classList.add('active');
-  resultScreen.classList.remove('active');
+  // Gestion propre des écrans avec .hidden
+  homeScreen.classList.add('hidden');
+  resultScreen.classList.add('hidden');
+  quizScreen.classList.remove('hidden');
 
   loadQuestion();
 }
@@ -723,67 +700,57 @@ function loadQuestion() {
   timeLeft = 30;
   timerText.textContent = `⏱️ ${timeLeft}s`;
 
-  // Démarrer le chronomètre
   timerInterval = setInterval(() => {
     timeLeft--;
     timerText.textContent = `⏱️ ${timeLeft}s`;
     if (timeLeft <= 0) {
       clearInterval(timerInterval);
-      handleAnswer(-1); // Temps écoulé = pas de réponse
+      handleAnswer(-1);
     }
   }, 1000);
 
   const q = currentQuiz[currentIndex];
-  progressText.textContent = `Question ${currentIndex + 1} / ${currentQuiz.length} (${q.domain})`;
+  progressText.textContent = `Question ${currentIndex + 1} / ${currentQuiz.length}`;
   progressBar.style.width = `${((currentIndex + 1) / currentQuiz.length) * 100}%`;
   questionText.textContent = q.question;
-
-  // Afficher l'illustration SVG intégrée
   imageContainer.innerHTML = getTechnicalSvg(q.svgType);
 
-  // Charger les options
   optionsContainer.innerHTML = '';
-  q.options.forEach((option, index) => {
+  q.options.forEach((opt, idx) => {
     const btn = document.createElement('button');
     btn.className = 'option-btn';
-    btn.textContent = option;
-    btn.onclick = () => handleAnswer(index);
+    btn.textContent = opt;
+    btn.onclick = () => handleAnswer(idx);
     optionsContainer.appendChild(btn);
   });
 }
 
-// Gérer la réponse sélectionnée
-function handleAnswer(selectedIndex) {
+// Gérer la réponse
+function handleAnswer(selectedIdx) {
   clearInterval(timerInterval);
-
   const q = currentQuiz[currentIndex];
-  const isCorrect = (selectedIndex === q.correct);
+  const isCorrect = (selectedIdx === q.correct);
 
-  if (isCorrect) {
-    score++;
-  }
+  if (isCorrect) score++;
 
   userAnswers.push({
     question: q.question,
     options: q.options,
-    userSelected: selectedIndex,
+    userSelected: selectedIdx,
     correctIndex: q.correct,
-    explanation: q.explanation,
-    domain: q.domain
+    explanation: q.explanation
   });
 
-  // Désactiver tous les boutons et colorer
   const buttons = optionsContainer.querySelectorAll('.option-btn');
   buttons.forEach((btn, idx) => {
     btn.disabled = true;
     if (idx === q.correct) {
-      btn.classList.add('correct');
-    } else if (idx === selectedIndex) {
-      btn.classList.add('incorrect');
+      btn.style.background = 'var(--accent)';
+    } else if (idx === selectedIdx) {
+      btn.style.background = 'var(--danger)';
     }
   });
 
-  // Passer à la question suivante après 1.5 seconde
   setTimeout(() => {
     currentIndex++;
     if (currentIndex < currentQuiz.length) {
@@ -794,49 +761,37 @@ function handleAnswer(selectedIndex) {
   }, 1500);
 }
 
-// Afficher l'écran des résultats et la correction complète
+// Afficher les résultats
 function showResults() {
-  quizScreen.classList.remove('active');
-  resultScreen.classList.add('active');
+  quizScreen.classList.add('hidden');
+  resultScreen.classList.remove('hidden');
 
   scoreText.textContent = `${score} / ${currentQuiz.length}`;
 
-  let feedback = "";
-  if (score >= 18) {
-    feedback = "🏆 Excellent ! Niveau d'expertise technique irréprochable.";
-  } else if (score >= 14) {
-    feedback = "⭐ Très bien ! Solides compétences techniques confirmées.";
-  } else if (score >= 10) {
-    feedback = "👍 Résultat moyen. Quelques révisions techniques sont conseillées.";
-  } else {
-    feedback = "📚 Des notions à approfondir dans ce domaine technique.";
-  }
-  feedbackText.textContent = feedback;
+  if (score >= 18) feedbackText.textContent = "🏆 Excellent ! Niveau d'expertise technique irréprochable.";
+  else if (score >= 14) feedbackText.textContent = "⭐ Très bien ! Solides compétences confirmées.";
+  else if (score >= 10) feedbackText.textContent = "👍 Résultat moyen. Quelques révisions conseillées.";
+  else feedbackText.textContent = "📚 Des notions à approfondir dans ce domaine.";
 
-  // Générer la liste détaillée des corrections
-  correctionsContainer.innerHTML = '';
+  correctionContainer.innerHTML = '';
   userAnswers.forEach((ans, idx) => {
-    const card = document.createElement('div');
-    card.className = `correction-card ${ans.userSelected === ans.correctIndex ? 'correct-card' : 'incorrect-card'}`;
-    
-    let userAnsText = ans.userSelected >= 0 ? ans.options[ans.userSelected] : "⏱️ Temps écoulé (Aucune réponse)";
-    let correctAnsText = ans.options[ans.correctIndex];
+    const item = document.createElement('div');
+    item.className = 'correction-item';
+    const userTxt = ans.userSelected >= 0 ? ans.options[ans.userSelected] : "⏱️ Temps écoulé";
+    const correctTxt = ans.options[ans.correctIndex];
+    const statusColor = ans.userSelected === ans.correctIndex ? 'var(--accent)' : 'var(--danger)';
 
-    card.innerHTML = `
-      <div class="correction-header">
-        <span>Q${idx + 1} [${ans.domain}]</span>
-        <span>${ans.userSelected === ans.correctIndex ? '✅ Correct' : '❌ Incorrect'}</span>
-      </div>
-      <p class="correction-q"><strong>${ans.question}</strong></p>
-      <p><strong>Votre réponse :</strong> <span class="${ans.userSelected === ans.correctIndex ? 'text-green' : 'text-red'}">${userAnsText}</span></p>
-      <p><strong>Bonne réponse :</strong> <span class="text-green">${correctAnsText}</span></p>
-      <div class="explanation-box">💡 <strong>Explication technique :</strong> ${ans.explanation}</div>
+    item.innerHTML = `
+      <p><strong>Q${idx + 1}: ${ans.question}</strong></p>
+      <p>Ta réponse : <span style="color: ${statusColor};">${userTxt}</span></p>
+      <p>Bonne réponse : <span style="color: var(--accent);">${correctTxt}</span></p>
+      <p><em>💡 ${ans.explanation}</em></p>
     `;
-    correctionsContainer.appendChild(card);
+    correctionContainer.appendChild(item);
   });
 }
 
-// Écouteurs d'événements pour les boutons de domaine
+// Écouteurs d'événements
 domainButtons.forEach(btn => {
   btn.addEventListener('click', () => {
     const domain = btn.getAttribute('data-domain');
@@ -845,6 +800,6 @@ domainButtons.forEach(btn => {
 });
 
 restartBtn.addEventListener('click', () => {
-  resultScreen.classList.remove('active');
-  homeScreen.classList.add('active');
+  resultScreen.classList.add('hidden');
+  homeScreen.classList.remove('hidden');
 });
