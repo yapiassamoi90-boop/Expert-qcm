@@ -1,5 +1,491 @@
-// Base de données complète des questions techniques, de français et d'anglais (20 questions par domaine)
+// Base de données complète des questions techniques, de français et d'anglais
 const questionsData = [
+  // --- MACHINES AGRICOLES ---
+  {
+    domain: "Agricole",
+    question: "Quel est le rôle principal d'une prise de force (PDF) sur un tracteur agricole ?",
+    options: ["Refroidir le moteur", "Transmettre la puissance mécanique du moteur aux outils attelés", "Gérer le freinage de la remorque", "Alourdir l'essieu avant"],
+    correct: 1,
+    explanation: "La prise de force tourne à un régime normalisé (souvent 540 ou 1000 tr/min) pour entraîner des broyeurs, faucheuses ou presses.",
+    svgType: "motor"
+  },
+  {
+    domain: "Agricole",
+    question: "Pourquoi les tracteurs disposent-ils souvent d'un lestage (masses en fonte ou eau dans les pneus) ?",
+    options: ["Pour réduire la vitesse maximale", "Pour améliorer l'adhérence et limiter le patinage aux efforts de traction", "Pour alléger la direction", "Pour consommer plus de carburant"],
+    correct: 1,
+    explanation: "Le lestage augmente la charge sur les roues pour optimiser le transfert de puissance au sol.",
+    svgType: "weight"
+  },
+  {
+    domain: "Agricole",
+    question: "Quel composant relie l'attelage arrière d'un tracteur à un outil et permet de gérer le relevage hydraulique ?",
+    options: ["Le troisième point (barre ou vérin supérieur)", "La courroie de ventilateur", "Le pont avant directeur", "L'alternateur"],
+    correct: 0,
+    explanation: "Le troisième point assure la stabilité et le réglage de l'assiette des outils portés ou semi-portés.",
+    svgType: "cylinder"
+  },
+  {
+    domain: "Agricole",
+    question: "À quoi sert le différentiel sur un essieu de tracteur agricole ?",
+    options: ["À bloquer les roues à haute vitesse", "À permettre aux roues intérieures et extérieures de tourner à des vitesses différentes dans les virages", "À multiplier la vitesse par deux", "À couper le moteur"],
+    correct: 1,
+    explanation: "Le différentiel compense la différence de distance parcourue par les roues gauche et droite en courbe.",
+    svgType: "gear"
+  },
+  {
+    domain: "Agricole",
+    question: "Quel est l'intérêt d'un pont avant directeur et moteur sur un tracteur moderne ?",
+    options: ["Augmenter la consommation d'huile", "Améliorer la motricité globale et la force de traction en conditions difficiles", "Réduire le poids du tracteur", "Supprimer les freins arrière"],
+    correct: 1,
+    explanation: "La transmission intégrale (4RM) évite le patinage dans les sols meubles ou humides.",
+    svgType: "motor"
+  },
+  {
+    domain: "Agricole",
+    question: "Quel système équipe la plupart des moissonneuses-batteuses pour séparer les grains de la paille après le battage ?",
+    options: ["Le semoir", "Les secoueurs ou le rotor de séparation", "Le radiateur d'huile", "Le compresseur de climatisation"],
+    correct: 1,
+    explanation: "Les secoueurs secouent la paille pour récupérer les derniers grains restants qui tombent dans la grille.",
+    svgType: "flow"
+  },
+  {
+    domain: "Agricole",
+    question: "Quelle est l'utilité du relevage avant sur certains tracteurs polyvalents ?",
+    options: ["Porter des masses d'alourdissement ou des outils frontaux (ex: faucheuse, masselotte)", "Refroidir le carburant", "Éclairer les champs en marche arrière", "Gonfler les pneus automatiquement"],
+    correct: 0,
+    explanation: "Il permet de combiner les travaux en travaillant à l'avant et à l'arrière simultanément.",
+    svgType: "cylinder"
+  },
+  {
+    domain: "Agricole",
+    question: "Quel fluide est principalement utilisé pour actionner les vérins et distributeurs d'un outil agricole hydraulique ?",
+    options: ["De l'eau savonneuse", "De l'huile hydraulique minérale ou synthétique", "Du liquide de frein DOT 4", "De l'essence"],
+    correct: 1,
+    explanation: "L'huile hydraulique lubrifie et transmet la puissance sous haute pression.",
+    svgType: "oil"
+  },
+  {
+    domain: "Agricole",
+    question: "Quel est le rôle du système d'injection de carburant dans un moteur diesel agricole ?",
+    options: ["Pulvériser finement le gazole dans la chambre de combustion au moment opportun", "Allumer l'essence avec une étincelle", "Refroidir le bloc moteur", "Filtrer l'air d'admission"],
+    correct: 0,
+    explanation: "L'auto-inflammation du gazole pulvérisé sous haute pression génère l'énergie motrice.",
+    svgType: "pump"
+  },
+  {
+    domain: "Agricole",
+    question: "Qu'appelle-t-on un semoir pneumatique ?",
+    options: ["Un semoir qui fonctionne sans graines", "Un semoir utilisant un flux d'air pour transporter et distribuer les graines avec précision", "Un semoir manuel en bois", "Un outil fonctionnant à l'eau"],
+    correct: 1,
+    explanation: "Le flux d'air assure une répartition homogène des semences dans les lignes de culture.",
+    svgType: "flow"
+  },
+  {
+    domain: "Agricole",
+    question: "Pourquoi nettoie-t-on régulièrement le radiateur d'un tracteur travaillant en conditions poussiéreuses (moisson, foin) ?",
+    options: ["Pour le repeindre", "Pour éviter le colmatage qui entraîne une surchauffe du moteur", "Pour alléger le tracteur", "Pour consommer moins d'huile"],
+    correct: 1,
+    explanation: "La poussière accumulée obstrue les faisceaux et bloque l'échange thermique.",
+    svgType: "cooler"
+  },
+  {
+    domain: "Agricole",
+    question: "Quel est le rôle d'une herse rotative en préparation du lit de semence ?",
+    options: ["Tasser fortement la terre", "Émietter et niveler la terre grâce à des dents animées d'un mouvement rotatif", "Semer l'engrais", "Arroser les cultures"],
+    correct: 1,
+    explanation: "Elle prépare une structure de sol fine et régulière pour accueillir les graines.",
+    svgType: "gear"
+  },
+  {
+    domain: "Agricole",
+    question: "Qu'est-ce qu'une trémie sur une machine agricole (semoir ou engrais) ?",
+    options: ["Le réservoir de stockage des graines ou de l'engrais à distribuer", "Le siège du conducteur", "Le tuyau d'échappement", "Le filtre à air"],
+    correct: 0,
+    explanation: "La trémie contient la matière première (semence ou fertilisant) avant épandage.",
+    svgType: "filter"
+  },
+  {
+    domain: "Agricole",
+    question: "Quel composant assure le démarrage électrique d'un moteur thermique de tracteur ?",
+    options: ["L'alternateur", "Le démarreur électrique alimenté par la batterie", "Le radiateur", "Le réservoir"],
+    correct: 1,
+    explanation: "Le démarreur lance le vilebrequin jusqu'à ce que le moteur démarre de manière autonome.",
+    svgType: "motor"
+  },
+  {
+    domain: "Agricole",
+    question: "Quel est l'effet d'une pression de gonflage des pneus trop élevée aux champs ?",
+    options: ["Un meilleur confort", "Un tassement excessif du sol et un patinage accru", "Une économie de pneu totale", "Une vitesse plus lente"],
+    correct: 1,
+    explanation: "Une pression trop forte réduit l'empreinte au sol, abîme les sols agricoles et réduit l'adhérence.",
+    svgType: "warning"
+  },
+  {
+    domain: "Agricole",
+    question: "À quoi sert un limiteur de couple (ou boulon de cisaillement) sur la transmission d'un outil de travail du sol ?",
+    options: ["À casser exprès pour protéger la mécanique en cas d'obstacle (souche, pierre)", "À bloquer les roues", "À changer les vitesses", "À mesurer la vitesse"],
+    correct: 0,
+    explanation: "Il fait office de fusible mécanique pour éviter la casse du boîtier ou de l'arbre en cas de blocage.",
+    svgType: "breaker"
+  },
+  {
+    domain: "Agricole",
+    question: "Quel rôle joue le filtre à air cyclonique sur un tracteur agricole ?",
+    options: ["Prélarier et éjecter les grosses particules de poussière avant le filtre en papier", "Filtrer l'huile moteur", "Refroidir l'habitacle", "Éurer le carburant"],
+    correct: 0,
+    explanation: "La force centrifuge sépare les poussières lourdes pour préserver le filtre principal.",
+    svgType: "filter"
+  },
+  {
+    domain: "Agricole",
+    question: "Qu'est-ce qu'un andaineur en agriculture ?",
+    options: ["Une machine qui rassemble l'herbe coupée en lignes (andains) pour faciliter le ramassage", "Un outil pour couper le bois", "Une pompe à eau", "Un pulvérisateur"],
+    correct: 0,
+    explanation: "Il prépare le fourrage pour le passage de la presse ou de l'ensileuse.",
+    svgType: "flow"
+  },
+  {
+    domain: "Agricole",
+    question: "Quel est l'objectif principal d'un traitement phytosanitaire par pulvérisation ?",
+    options: ["Nettoyer la cabine", "Protéger les cultures contre les parasites, maladies ou mauvaises herbes", "Colorer les feuilles", "Alourdir la plante"],
+    correct: 1,
+    explanation: "Le pulvérisateur répartit uniformément les produits de protection des cultures.",
+    svgType: "pump"
+  },
+  {
+    domain: "Agricole",
+    question: "Pourquoi les circuits hydrauliques des tracteurs modernes utilisent-ils un système Load-Sensing (détection de charge) ?",
+    options: ["Pour consommer un maximum d'énergie", "Pour adapter le débit et la pression de la pompe strictement aux besoins réels de l'outil", "Pour chauffer l'huile", "Pour supprimer le réservoir"],
+    correct: 1,
+    explanation: "Le système Load-Sensing optimise le rendement énergétique et évite les pertes de puissance.",
+    svgType: "pressure"
+  },
+
+  // --- MAINTENANCE DES MACHINES AGRICOLES ---
+  {
+    domain: "MaintAgricole",
+    question: "Quelle opération de maintenance préventive est indispensable après l'utilisation d'un pulvérisateur de produits phytosanitaires ?",
+    options: ["Le rincage complet du circuit et de la cuve à l'eau claire", "Le graissage des pneus", "La vidange du pont arrière", "Le changement du démarreur"],
+    correct: 0,
+    explanation: "Le rinçage évite la corrosion des composants et les réactions chimiques entre produits résiduels.",
+    svgType: "warning"
+  },
+  {
+    domain: "MaintAgricole",
+    question: "Pourquoi est-il crucial de vérifier régulièrement la tension des courroies d'entraînement sur une machine de récolte ?",
+    options: ["Pour éviter le patinage, la perte de rendement des organes et l'usure prématurée", "Pour changer la couleur de la courroie", "Pour augmenter la tension de la batterie", "Pour réduire le niveau d'huile"],
+    correct: 0,
+    explanation: "Une courroie détendue patine, chauffe et s'use rapidement sous l'effet de la charge.",
+    svgType: "belt"
+  },
+  {
+    domain: "MaintAgricole",
+    question: "Quel risque court-on si l'on néglige le graissage des paliers et articulations d'un chargeur frontale ou d'un outil agricole ?",
+    options: ["Un grippage rapide, une usure anormale des axes et du jeu mécanique excessif", "Une baisse de la consommation de carburant", "Un meilleur rendement", "Un nettoyage automatique"],
+    correct: 0,
+    explanation: "La graisse fraîche chasse l'humidité et les impuretés tout en créant un film antifriction.",
+    svgType: "bearing"
+  },
+  {
+    domain: "MaintAgricole",
+    question: "Quel est l'impact d'un filtre à carburant colmaté sur un moteur de machine agricole ?",
+    options: ["Des pertes de puissance, des ratés ou un refus de démarrer en charge", "Une vitesse de pointe doublée", "Une surchauffe de la climatisation", "Une baisse du niveau d'huile"],
+    correct: 0,
+    explanation: "Le gazole ne passe plus en quantité suffisante pour alimenter la pompe d'injection.",
+    svgType: "filter"
+  },
+  {
+    domain: "MaintAgricole",
+    question: "Comment doit-on stocker une batterie de tracteur immobilisé pendant plusieurs mois d'hiver ?",
+    options: ["La laisser branchée dans le froid sans surveillance", "La démonter, la stocker dans un local tempéré et effectuer une charge de maintien", "La vider complètement de son acide", "La jeter directement"],
+    correct: 1,
+    explanation: "Le froid et l'autodécharge risquent de sulfater et endommager définitivement la batterie.",
+    svgType: "battery"
+  },
+  {
+    domain: "MaintAgricole",
+    question: "Que doit-on inspecter en priorité lors de la maintenance d'une transmission par chaîne sur un distributeur d'engrais ou un fumier ?",
+    options: ["L'allongement de la chaîne, l'usure des pignons et la présence de lubrifiant", "La couleur de la peinture", "Le niveau d'essence", "La pression des pneus"],
+    correct: 0,
+    explanation: "Une chaîne détendue risque de sauter des dents ou de casser sous effort.",
+    svgType: "mechanics"
+  },
+  {
+    domain: "MaintAgricole",
+    question: "Pourquoi est-il impératif de contrôler le point de rosée ou la protection antigel du liquide de refroidissement avant l'hiver ?",
+    options: ["Pour éviter le gel du bloc moteur qui provoquerait des fissures destructrices", "Pour augmenter la puissance fiscale", "Pour nettoyer l'intérieur du radiateur", "Pour colorer le vase d'expansion"],
+    correct: 0,
+    explanation: "L'eau en gelant prend du volume et peut fendre irrémédiablement le bloc moteur ou la culasse.",
+    svgType: "warning"
+  },
+  {
+    domain: "MaintAgricole",
+    question: "Lors d'une intervention de maintenance sur le circuit hydraulique d'un tracteur, quelle règle d'hygiène et de propreté est fondamentale ?",
+    options: ["Travailler dans la poussière", "Maintenir une propreté absolue pour éviter l'introduction de la moindre impureté dans les composants sensibles", "Laisser les flexibles ouverts à l'air libre", "Utiliser de l'eau sale pour nettoyer"],
+    correct: 1,
+    explanation: "Les micro-particules détruisent instantanément les pompes et distributeurs haute pression.",
+    svgType: "oil"
+  },
+  {
+    domain: "MaintAgricole",
+    question: "Quel diagnostic pose-t-on face à une fumée noire excessive à l'échappement d'un moteur diesel agricole en charge ?",
+    options: ["Un filtre à air fortement colmaté ou un excès de carburant / défaut d'injecteur", "Un manque d'huile de pont", "Une batterie déchargée", "Un circuit hydraulique vide"],
+    correct: 0,
+    explanation: "Le manque d'air ou un mauvais spray de gazole empêche une combustion complète (imbrûlés).",
+    svgType: "warning"
+  },
+  {
+    domain: "MaintAgricole",
+    question: "À quelle fréquence générale doit-on effectuer la vidange de l'huile moteur et le remplacement des filtres associés ?",
+    options: ["Tous les 10 ans", "Selon les préconisations constructeur (ex: toutes les 250 à 500 heures de service)", "Uniquement quand le moteur serre", "Jamais"],
+    correct: 1,
+    explanation: "Le respect des heures de service préserve la lubrification des pièces en frottement.",
+    svgType: "oil"
+  },
+  {
+    domain: "MaintAgricole",
+    question: "Quel est le rôle du purgeur de décantation d'eau sur l'alimentation en gazole d'un engin agricole ?",
+    options: ["Séparer et éliminer l'eau et les impuretés lourdes présentes dans le carburant avant la pompe", "Ajouter de l'eau au moteur", "Refroidir l'alternateur", "Mesurer le régime"],
+    correct: 0,
+    explanation: "L'eau dans le gazole provoque la rouille et le grippage des injecteurs haute pression.",
+    svgType: "filter"
+  },
+  {
+    domain: "MaintAgricole",
+    question: "Pourquoi est-il important de vérifier régulièrement le serrage des écrous de roues sur les tracteurs lourds ?",
+    options: ["Pour éviter le cisaillement des goujons et la perte de roue due aux vibrations intenses", "Pour consommer moins", "Pour gonfler les pneus", "Pour ajuster la vitesse"],
+    correct: 0,
+    explanation: "Les efforts de traction répétés et les chocs provoquent un desserrage progressif.",
+    svgType: "torque"
+  },
+  {
+    domain: "MaintAgricole",
+    question: "Que indique la présence de mayonnaise (émulsion blanc-grisâtre) sur la jauge d'huile moteur ?",
+    options: ["Un mélange accidentel d'eau (ou de LDR) et d'huile (fuite de joint de culasse ou condensation)", "Une excellente santé du moteur", "Un excès de gazole propre", "Une surchauffe de la batterie"],
+    correct: 0,
+    explanation: "L'eau se mélange à l'huile sous l'action du brassage, signalant une avarie grave d'étanchéité.",
+    svgType: "warning"
+  },
+  {
+    domain: "MaintAgricole",
+    question: "Quel dispositif de sécurité vérifie-t-on lors de la maintenance des prises de force (PDF) ?",
+    options: ["La présence et le bon état des capots de protection enveloppants (cardan)", "La couleur de la tôle", "Le klaxon", "L'autoradio"],
+    correct: 0,
+    explanation: "Les protecteurs de cardan empêchent l'hampes ou les vêtements d'être happés par l'arbre tournant.",
+    svgType: "breaker"
+  },
+  {
+    domain: "MaintAgricole",
+    question: "Comment procède-t-on pour nettoyer un filtre à air sec en papier sans l'endommager ?",
+    options: ["Le laver à grande eau savonnée", "Souffler de l'air comprimé de l'intérieur vers l'extérieur à pression modérée", "Le brûler pour enlever la poussière", "Le frapper violemment contre le sol"],
+    correct: 1,
+    explanation: "Souffler de l'intérieur vers l'extérieur déloge la poussière sans déchirer le papier filtrant.",
+    svgType: "filter"
+  },
+  {
+    domain: "MaintAgricole",
+    question: "Quel est le risque d'utiliser une huile moteur inadaptée (viscosité incorrecte) sur un tracteur moderne ?",
+    options: ["Une usure prématurée des coussinets, un mauvais graissage à chaud ou à froid", "Une augmentation automatique de la puissance", "Rien du tout", "Un nettoyage des injecteurs"],
+    correct: 0,
+    explanation: "Le film d'huile ne garantit plus la séparation des pièces si la viscosité ne correspond pas aux tolérances.",
+    svgType: "oil"
+  },
+  {
+    domain: "MaintAgricole",
+    question: "Quel contrôle effectue-t-on sur le circuit de freinage hydraulique ou pneumatique d'une remorque agricole avant circulation ?",
+    options: ["L'étanchéité des couplages, l'efficacité de freinage et la purge de l'humidité", "La pression de l'air dans les phares", "Le niveau d'huile de direction", "La charge de la radio"],
+    correct: 0,
+    explanation: "Le freinage des remorques lourdes est critique pour la sécurité routière et aux champs.",
+    svgType: "brake"
+  },
+  {
+    domain: "MaintAgricole",
+    question: "Quelle est l'utilité des pastilles ou graisseurs mécaniques répartis sur le châssis d'une machine ?",
+    options: ["Injecter de la graisse fraîche sous pression dans les paliers via une pompe à graisse", "Mesurer la température", "Fermer des circuits électriques", "Fixer les autocollants"],
+    correct: 0,
+    explanation: "Les graisseurs permettent de renouveler le lubrifiant des articulations sans démontage.",
+    svgType: "bearing"
+  },
+  {
+    domain: "MaintAgricole",
+    question: "Pourquoi faut-il impérativement consigner la machine (couper le moteur, retirer la clé, purger la pression) avant toute maintenance d'outils coupants ?",
+    options: ["Pour économiser le carburant", "Pour éliminer tout risque de démarrage intempestif ou de blessure corporelle grave", "Pour refroidir l'alternateur", "Pour recharger la batterie"],
+    correct: 1,
+    explanation: "La sécurité des intervenants prime : aucune intervention sur organe actif sans consignation.",
+    svgType: "warning"
+  },
+  {
+    domain: "MaintAgricole",
+    question: "Quel entretien périodique réalise-t-on sur le circuit de climatisation de la cabine d'un tracteur ?",
+    options: ["Remplacer les filtres à charbon actif de cabine et contrôler l'absence de fuite de gaz", "Vidanger le réservoir de gazole", "Graisser les essuie-glaces", "Changer les pneus"],
+    correct: 0,
+    explanation: "Le filtre de cabine protège le conducteur des poussières et des odeurs de produits de traitement.",
+    svgType: "cooler"
+  },
+
+  // --- MANUTENTION ET LEVAGE ---
+  {
+    domain: "Manutention",
+    question: "Quel dispositif de sécurité empêche un chariot élévateur de basculer en avant lors d'une surcharge ?",
+    options: ["Le limiteur de vitesse", "L'abaque de charge (ou courbe de charge)", "Le klaxon de recul", "La ceinture de sécurité uniquement"],
+    correct: 1,
+    explanation: "L'abaque de charge indique le poids maximal autorisé en fonction de la hauteur d'élévation et du centre de gravité.",
+    svgType: "warning"
+  },
+  {
+    domain: "Manutention",
+    question: "Quel est le rôle d'un frein de hisrage sur un pont roulant ou une grue de levage ?",
+    options: ["Maintenir la charge suspendue de manière sécurisée à l'arrêt (fermeture par défaut)", "Ralentir le chariot latéralement", "Graisser le câble en acier", "Couper l'électricité générale"],
+    correct: 0,
+    explanation: "Le frein de hisrage s'applique automatiquement hors tension pour interdire toute chute de charge.",
+    svgType: "brake"
+  },
+  {
+    domain: "Manutention",
+    question: "Qu'est-ce que le centre de gravité nominal d'une charge sur les fourches d'un chariot élévateur (ex: 500 mm) ?",
+    options: ["La distance entre le talon des fourches et le centre de la charge", "La hauteur totale du mât", "Le poids de la palette", "La vitesse maximale"],
+    correct: 0,
+    explanation: "Il sert de référence standardisée sur l'abaque de charge constructeur.",
+    svgType: "stability"
+  },
+  {
+    domain: "Manutention",
+    question: "Quel contrôle visuel et mécanique doit-on effectuer obligatoirement sur un câble de levage en acier ?",
+    options: ["Rechercher des brin cassés, de l'usure, de la corrosion ou des écrasements", "Vérifier la couleur de la peinture extérieure", "Mesurer la température du câble", "Nettoyer avec du savon"],
+    correct: 0,
+    explanation: "Un câble endommagé présente un risque majeur de rupture sous charge.",
+    svgType: "crack"
+  },
+  {
+    domain: "Manutention",
+    question: "À quoi sert un fin de course (limiteur de fin de course) sur le mouvement de levage d'un pont roulant ?",
+    options: ["Couper automatiquement le moteur lorsque le crochet atteint la position haute ou basse maximale", "Changer le sens de rotation", "Accélérer la descente", "Mesurer la température"],
+    correct: 0,
+    explanation: "Il évite les collisions destructrices entre le moufle et la structure du pont.",
+    svgType: "timer"
+  },
+  {
+    domain: "Manutention",
+    question: "Quel est le risque principal lors du déplacement d'une charge élevée avec un chariot élévateur mât déployé ?",
+    options: ["Une instabilité latérale et un risque de basculement avant très élevé", "Une économie de carburant", "Un refroidissement du moteur", "Une augmentation de la vitesse"],
+    correct: 0,
+    explanation: "Le centre de gravité global s'élève, ce qui réduit considérablement la stabilité du chariot.",
+    svgType: "warning"
+  },
+  {
+    domain: "Manutention",
+    question: "Qu'appelle-t-on la CMU (Charge Maximale d'Utilisation) d'un accessoire de levage (élingue, manille, sangle) ?",
+    options: ["La charge maximale que l'accessoire est autorisé à lever en service courant", "Le poids propre de l'élingue", "La charge de rupture en laboratoire", "La force de serrage"],
+    correct: 0,
+    explanation: "La CMU ne doit jamais être dépassée sous peine d'accident grave.",
+    svgType: "gauge"
+  },
+  {
+    domain: "Manutention",
+    question: "Pourquoi utilise-t-on un palonnier dans certaines opérations de levage complexes ?",
+    options: ["Pour répartir les efforts sur plusieurs points d'élingage et éviter le basculement ou l'écrasement de la charge", "Pour alléger le crochet", "Pour peindre la charge", "Pour couper le courant"],
+    correct: 0,
+    explanation: "Le palonnier rigidifie la prise et sécurise l'équilibre des charges longues ou fragiles.",
+    svgType: "mechanics"
+  },
+  {
+    domain: "Manutention",
+    question: "Quel type de moteur équipe majoritairement les chariots élévateurs frontaux thermiques d'intérieur ou d'extérieur ?",
+    options: ["Un moteur diesel ou GPL (gaz de pétrole liquéfié)", "Un réacteur d'avion", "Un moteur à vapeur", "Un moteur à pédales"],
+    correct: 0,
+    explanation: "Les moteurs thermiques GPL ou Diesel offrent une grande autonomie et puissance de levage.",
+    svgType: "motor"
+  },
+  {
+    domain: "Manutention",
+    question: "Quel rôle joue le vérin d'inclinaison (mât) sur un chariot élévateur ?",
+    options: ["Incliner le mât vers l'avant (pour poser/prendre) ou vers l'arrière (pour stabiliser la charge en roulant)", "Lever la palette en hauteur", "Tourner les roues arrière", "Freiner le chariot"],
+    correct: 0,
+    explanation: "L'inclinaison vers l'arrière sécurise la charge sur les fourches pendant le transport.",
+    svgType: "cylinder"
+  },
+  {
+    domain: "Manutention",
+    question: "Quelle est la règle d'or concernant la circulation sous une charge suspendue ?",
+    options: ["C'est strictement interdit en permanence", "C'est autorisé si on court vite", "C'est permis uniquement le matin", "Aucune règle n'existe"],
+    correct: 0,
+    explanation: "Il est formellement interdit de stationner ou passer sous une charge suspendue pour des raisons de sécurité vitale.",
+    svgType: "warning"
+  },
+  {
+    domain: "Manutention",
+    question: "Qu'est-ce qu'un transpalette (manuel ou électrique) ?",
+    options: ["Un engin de manutention au sol conçu pour lever et transporter des charges sur palettes sur de courtes distances", "Une grue de chantier", "Un camion semi-remorque", "Un ascenseur d'immeuble"],
+    correct: 0,
+    explanation: "Il soulève la palette de quelques centimètres juste de quoi permettre son déplacement au sol.",
+    svgType: "ship"
+  },
+  {
+    domain: "Manutention",
+    question: "Quel dispositif assure la transmission de puissance et de direction sur un chariot élévateur électrique moderne ?",
+    options: ["Des moteurs électriques à courant alternatif (AC) pilotés par variateurs électroniques", "Une boîte de vitesses manuelle à embrayage", "Des courroies en cuir", "Un système hydraulique rotatif pur"],
+    correct: 0,
+    explanation: "La variation électronique garantit des démarrages progressifs et un rendement énergétique élevé.",
+    svgType: "contactor"
+  },
+  {
+    domain: "Manutention",
+    question: "Comment qualifie-t-on l'essai réglementaire périodique réalisé sur les appareils de levage pour valider leur sécurité ?",
+    options: ["L'épreuve de charge et les vérifications générales périodiques (VGP)", "Le test de peinture", "Le contrôle de la radio", "La pesée du conducteur"],
+    correct: 0,
+    explanation: "Les VGP sont obligatoires et garantissent la conformité des équipements de levage.",
+    svgType: "test"
+  },
+  {
+    domain: "Manutention",
+    question: "Quel est l'effet d'une surcharge sur un pont roulant en termes de sécurité mécanique ?",
+    options: ["Déformation de la structure, rupture des câbles ou patinage des sécurités", "Augmentation de la vitesse de levage", "Refroidissement du moteur", "Nettoyage des rails"],
+    correct: 0,
+    explanation: "La surcharge dépasse la limite élastique des matériaux et compromet la structure.",
+    svgType: "warning"
+  },
+  {
+    domain: "Manutention",
+    question: "À quoi sert le galet ou le coussinet de guidage sur les profilés du mât d'un chariot élévateur ?",
+    options: ["Permettre le coulissement vertical fluide et sans frottement excessif des éléments de mât", "Freiner le chariot en urgence", "Alimenter le klaxon", "Mesurer le poids"],
+    correct: 0,
+    explanation: "Les galets encaissent les efforts radiaux et axiaux lors de l'élévation de la charge.",
+    svgType: "bearing"
+  },
+  {
+    domain: "Manutention",
+    question: "Quel est l'élément de sécurité indispensable que le cariste doit boucler avant de démarrer un chariot élévateur ? ?",
+    options: ["La ceinture de sécurité", "Le casque antibruit", "Les lunettes de soleil", "Les gants en laine"],
+    correct: 0,
+    explanation: "La ceinture retient le conducteur sur son siège en cas de renversement du chariot (effet anti-éjection).",
+    svgType: "warning"
+  },
+  {
+    domain: "Manutention",
+    question: "Qu'appelle-t-on le 'déport de charge' sur un chariot élévateur à mât rétractable ou chariot télescopique ?",
+    options: ["La distance entre l'avant des roues et le centre de la charge", "La hauteur maximale", "La largeur des fourches", "Le poids du mât"],
+    correct: 0,
+    explanation: "Plus le déport est important, plus la capacité de charge admissible diminue fortement.",
+    svgType: "stability"
+  },
+  {
+    domain: "Manutention",
+    question: "Quel type de freinage utilise-t-on fréquemment sur les moteurs de levage des ponts roulants industriels ?",
+    options: ["Un frein électromagnétique à action par manque de courant (sécurité intégrée)", "Un frein à tambour manuel avec une pédale", "Un frein à eau", "Un frein de vélo"],
+    correct: 0,
+    explanation: "Dès que l'alimentation est coupée, les ressorts serrent le disque pour bloquer instantanément la charge.",
+    svgType: "brake"
+  },
+  {
+    domain: "Manutention",
+    question: "Pourquoi est-il interdit de transporter des personnes sur les fourches d'un chariot élévateur non conçu à cet effet ?",
+    options: ["Risque de chute de hauteur mortelle, absence de garde-corps et de sécurités réglementaires", "Le chariot consomme trop d'essence", "Les fourches sont trop froides", "C'est trop lourd pour les pneus"],
+    correct: 0,
+    explanation: "Les fourches ne constituent pas un poste de travail en hauteur sécurisé.",
+    svgType: "warning"
+  },
+
   // --- HYDRAULIQUE ---
   {
     domain: "Hydraulique",
@@ -324,7 +810,7 @@ const questionsData = [
     svgType: "ip"
   },
 
-  // --- MECANIQUE ---
+  // --- MÉCANIQUE ---
   {
     domain: "Mécanique",
     question: "Quel est le rôle principal d'un roulement à billes dans un mécanisme ?",
@@ -648,7 +1134,7 @@ const questionsData = [
     svgType: "logbook"
   },
 
-  // --- FRANÇAIS (20 questions) ---
+  // --- FRANÇAIS ---
   {
     domain: "Français",
     question: "Dans la phrase 'Le ciel est devenu noir', quelle est la fonction du mot 'noir' ?",
@@ -810,7 +1296,7 @@ const questionsData = [
     svgType: "grammar"
   },
 
-  // --- ANGLAIS (20 questions) ---
+  // --- ANGLAIS ---
   {
     domain: "Anglais",
     question: "How do you transform this sentence into the passive voice? -> 'The mechanic fixed the engine.'",
@@ -871,7 +1357,7 @@ const questionsData = [
     question: "What is the correct Simple Past form of the irregular verb 'to go'?",
     options: ["Goed", "Gone", "Went", "Going"],
     correct: 2,
-    explanation: "Le verbe 'to go au prétérit est un verbe irrégulier très courant : 'went'.",
+    explanation: "Le verbe 'to go' au prétérit est un verbe irrégulier très courant : 'went'.",
     svgType: "english"
   },
   {
