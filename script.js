@@ -1,12 +1,12 @@
 // ==========================================
-// BASE DE DONNÉES EXPERT - QCM TECHNIQUE & GÉNÉRAL
+// BASE DE DONNÉES EXPERT - QCM TECHNIQUE & GÉNÉRAL (VERSION ÉTENDUE)
 // ==========================================
 
 const questionsData = [
-  // --- MACHINES AGRICOLES (Agricole) ---
+  // --- 1. MACHINES AGRICOLES (Agricole) ---
   {
     domain: "Agricole",
-    question: "Quel est l'impact principal d'un patumage excessif des roues motrices sur un tracteur lourd en labour profond ?",
+    question: "Quel est l'impact principal d'un patinage excessif des roues motrices sur un tracteur lourd en labour profond ?",
     options: [
       "Une augmentation significative du rendement à la barre",
       "Une destruction de la structure du sol (semelle de labour) et une usure prématurée des pneumatiques par cisaillement",
@@ -52,8 +52,32 @@ const questionsData = [
     correct: 1,
     explanation: "Le correcteur de dévers compense l'inclinaison transversale pour garantir la stabilité de la machine, le confort de conduite et une alimentation homogène des organes de coupe."
   },
+  {
+    domain: "Agricole",
+    question: "Sur un semoir monograine pneumatique à dépression, quel élément dose précisément l'espacement des graines sur le rang ?",
+    options: [
+      "Le variateur mécanique à chaînes à doigts",
+      "Le disque alvéolé rotatif soumis à une dépression d'air calibrée",
+      "Le clapet d'éjection à commande électromagnétique proportionnelle",
+      "La herse rotative frontale de préparation"
+    ],
+    correct: 1,
+    explanation: "Le disque alvéolé retient une seule graine par alvéole grâce à la dépression créée par la turbine ; une fois l'interception du vide opérée, la graine chute par gravité dans le sillon."
+  },
+  {
+    domain: "Agricole",
+    question: "En viticulture ou arboriculture, qu'appelle-t-on un système de pulvérisation 'freewind' ou à flux tangentiel ? ",
+    options: [
+      "Un système fonctionnant entièrement sans ventilateur ni prise de force",
+      "Un dispositif utilisant des canons à air pulsé haute pression à longue portée",
+      "Un dispositif de jets orientés par des bras commandés par GPS",
+      "Un système de diffusion par ultrasons immergés"
+    ],
+    correct: 1,
+    explanation: "Les canons ou flux tangentiels permettent de projeter la bouillie sur des hauteurs importantes (arbres fruitiers) en s'affranchissant des rampes traditionnelles."
+  },
 
-  // --- MAINTENANCE DES MACHINES AGRICOLES (MaintAgricole) ---
+  // --- 2. MAINTENANCE DES MACHINES AGRICOLES (MaintAgricole) ---
   {
     domain: "MaintAgricole",
     question: "Lors du calage de la distribution d'un moteur diesel agricole à rampe commune, quel outil est impératif pour contrôler l'usure de la chaîne ou des pignons ?",
@@ -64,11 +88,11 @@ const questionsData = [
       "Un testeur d'indice de cétane de l'huile"
     ],
     correct: 1,
-    explanation: "Le calage exige un pigeage mécanique précis du vilebrequin et de l'arbre à cames (PMH) combiné à un contrôle des jeux fonctionnels pour éviter toute collision soupapes/pistons."
+    explanation: "Le calage exige un pigeage mécanique précis du vilebrequin et de l'arbre à cames combiné à un contrôle des jeux fonctionnels pour éviter toute collision soupapes/pistons."
   },
   {
     domain: "MaintAgricole",
-    question: "Quelle est la conséquence directe d'un colmatage avancé du filtre à air sur un tracteur turbocompressé non inter refroidi ?",
+    question: "Quelle est la conséquence directe d'un colmatage avancé du filtre à air sur un tracteur turbocompressé non interrefroidi ?",
     options: [
       "Une augmentation de la pression de suralimentation et un gain de puissance",
       "Une baisse du rendement volumétrique, une surconsommation de carburant et des fumées noires à l'échappement",
@@ -76,7 +100,7 @@ const questionsData = [
       "Un grippage instantané de la pompe d'injection en ligne"
     ],
     correct: 1,
-    explanation: "Le filtre colmaté restreint l'admission d'air, appauvrissant le rapport stœchiométrique air/carburant, ce qui provoque des imbrûlés (fumées noires), une baisse de puissance et une hausse thermique."
+    explanation: "Le filtre colmaté restreint l'admission d'air, appauvrissant le rapport stœchiométrique, ce qui provoque des imbrûlés (fumées noires) et une baisse de rendement."
   },
   {
     domain: "MaintAgricole",
@@ -88,10 +112,22 @@ const questionsData = [
       "Pour éviter la cristallisation de l'urée (AdBlue) dans le circuit de carburant"
     ],
     correct: 0,
-    explanation: "L'eau favorise la prolifération bactérienne (boues), provoque la corrosion et détruit rapidement les micro-mécanismes des systèmes d'injection haute pression modernes."
+    explanation: "L'eau favorise la prolifération bactérienne (boues) et détruit rapidement les micro-mécanismes des systèmes d'injection haute pression modernes."
+  },
+  {
+    domain: "MaintAgricole",
+    question: "Quel phénomène d'usure observe-t-on sur les portées de chemises de cylindre du côté de la chambre de combustion en cas d'utilisation d'un carburant à haute teneur en soufre sans lubrifiant adapté ?",
+    options: [
+      "Une corrosion chimique par acides condensés et une usure abrasive accélérée",
+      "Une trempe thermique superficielle augmentant la dureté de l'acier",
+      "Un dépôt vitreux isolant totalement les gaz",
+      "Une dilatation spontanée du piston"
+    ],
+    correct: 0,
+    explanation: "Le soufre combiné aux condensats de combustion forme des acides corrosifs qui attaquent les parois des chemises (corrosion à froid)."
   },
 
-  // --- MANUTENTION ET LEVAGE (Manutention) ---
+  // --- 3. MANUTENTION ET LEVAGE (Manutention) ---
   {
     domain: "Manutention",
     question: "Comment évolue la capacité de charge résiduelle d'un chariot élévateur à contrepoids lorsque le mât est incliné vers l'avant avec une charge en hauteur ?",
@@ -102,11 +138,11 @@ const questionsData = [
       "Elle se stabilise automatiquement par le blocage de l'essieu directeur"
     ],
     correct: 2,
-    explanation: "Incliner le mât vers l'avant éloigne la charge du centre de gravité du chariot, ce qui réduit considérablement la charge maximale admissible au risque de basculement frontal."
+    explanation: "Incliner le mât vers l'avant éloigne la charge du centre de gravité du chariot, ce qui réduit considérablement la charge maximale admissible au risque de basculement."
   },
   {
     domain: "Manutention",
-    question: "Quel dispositif de sécurité est obligatoire sur le circuit hydraulique de levage d'une grue auxiliaire de chargement pour prévenir la chute de charge en cas de rupture de flexible ?",
+    question: "Quel dispositif de sécurité est obligatoire sur le circuit hydraulique de levage d'une grue auxiliaire pour prévenir la chute de charge en cas de rupture de flexible ?",
     options: [
       "Un filtre à tamis magnétique",
       "Un clapet anti-retour piloté (ou clapet de sécurité parachute)",
@@ -114,11 +150,11 @@ const questionsData = [
       "Un réchauffeur d'huile thermostatique"
     ],
     correct: 1,
-    explanation: "Le clapet anti-retour piloté se ferme instantanément en cas de chute de pression brutale (rupture de flexible), bloquant l'huile dans le vérin et empêchant la descente incontrôlée."
+    explanation: "Le clapet anti-retour piloté se ferme instantanément en cas de chute de pression brutale, bloquant l'huile dans le vérin."
   },
   {
     domain: "Manutention",
-    question: "Dans le cadre de l'élingage d'une charge lourde, quel est l'effet mécanique d'une augmentation de l'angle d'ouverture des brins d'élingue (par rapport à la verticale) ?",
+    question: "Dans le cadre de l'élingage d'une charge lourde, quel est l'effet mécanique d'une augmentation de l'angle d'ouverture des brins d'élingue par rapport à la verticale ?",
     options: [
       "La tension dans chaque brin diminue",
       "La tension dans chaque brin augmente de manière exponentielle",
@@ -126,39 +162,39 @@ const questionsData = [
       "Le coefficient de frottement du câble diminue"
     ],
     correct: 1,
-    explanation: "Plus l'angle d'une élingue par rapport à la verticale s'élargit, plus les efforts de traction s'exerçant sur les brins individuels augmentent, ce qui risque de rompre l'élingue si la charge limite est atteinte."
+    explanation: "Plus l'angle d'une élingue par rapport à la verticale s'élargit, plus les efforts de traction s'exerçant sur les brins individuels s'accroissent fortement."
   },
 
-  // --- MAINTENANCE DES MACHINES MARINE (Navale) ---
+  // --- 4. MAINTENANCE DES MACHINES MARINE (Navale) ---
   {
     domain: "Navale",
-    question: "Quel phénomène physique destructeur affecte fréquemment les hélices de navires et les parois internes des chemises de moteurs marins du côté eau douce/salée ?",
+    question: "Quel phénomène physique destructeur affecte fréquemment les hélices de navires et les parois internes des chemises sous l'effet des variations locales de pression ?",
     options: [
       "L'effet Peltier",
-      "La cavitation (implosion de bulles de vapeur sous l'effet des variations locales de pression)",
+      "La cavitation (implosion de bulles de vapeur)",
       "La trempe martensitique spontanée",
       "Le fluage thermique permanent"
     ],
     correct: 1,
-    explanation: "La cavitation génère des micro-jets à haute pression lors de l'implosion des bulles de vapeur, arrachant littéralement de la matière sur les pales d'hélice ou les chemises de cylindre."
+    explanation: "La cavitation génère des micro-jets à haute pression lors de l'implosion des bulles de vapeur, arrachant de la matière sur les pales ou les chemises."
   },
   {
     domain: "Navale",
-    question: "À quoi servent les anodes sacrificielles en zinc ou en aluminium fixées sur la coque submergée et le safran d'un navire ?",
+    question: "À quoi servent les anodes sacrificielles en zinc ou en aluminium fixées sur la coque submergée d'un navire ?",
     options: [
-      "À alourdir la ligne de flottaison pour stabiliser le navire par mer forte",
-      "À protéger les métaux nobles (acier, bronze, inox) de la corrosion galvanique en s'oxydant préférentiellement",
-      "À réduire la traînée hydrodynamique par effet électrostatique",
-      "À capter les parasites électromagnétiques du bord"
+      "À alourdir la ligne de flottaison",
+      "À protéger les métaux nobles de la corrosion galvanique en s'oxydant préférentiellement",
+      "À réduire la traînée hydrodynamique",
+      "À capter les parasites électromagnétiques"
     ],
     correct: 1,
-    explanation: "Étant constituées d'un métal plus électronégatif (anode), elles s'oxydent et se dissolvent à la place des structures métalliques de la coque ou de l'hélice (cathode)."
+    explanation: "Étant constituées d'un métal plus électronégatif, elles s'oxydent et se dissolvent à la place des structures de la coque."
   },
 
-  // --- MÉCANIQUE & ENGINS (Mécanique) ---
+  // --- 5. MÉCANIQUE & ENGINS (Mécanique) ---
   {
     domain: "Mécanique",
-    question: "Dans un train épicycloïdal, si la couronne est bloquée fixe, que le planétaire est menant (entrée) et que le porte-satellites est mené (sortie), quel type de rapport obtient-on ?",
+    question: "Dans un train épicycloïdal, si la couronne est bloquée fixe, que le planétaire est menant et le porte-satellites mené, quel type de rapport obtient-on ?",
     options: [
       "Un rapport de multiplication de vitesse",
       "Un rapport de réduction de vitesse à couple croissant",
@@ -166,100 +202,100 @@ const questionsData = [
       "Un couplage élastique à glissement contrôlé"
     ],
     correct: 1,
-    explanation: "Avec un planétaire menant et une couronne fixe, le porte-satellites tourne dans le même sens mais à une vitesse inférieure (réduction) tout en augmentant le couple transmis."
+    explanation: "Avec un planétaire menant et une couronne fixe, le porte-satellites tourne dans le même sens mais à vitesse inférieure (réduction) tout en augmentant le couple."
   },
   {
     domain: "Mécanique",
-    question: "Quel est le principal avantage technique d'un turbocompresseur à géométrie variable (TGV) par rapport à un turbo classique à soupape de décharge (wastegate) ?",
+    question: "Quel est l'avantage technique d'un turbocompresseur à géométrie variable (TGV) par rapport à un turbo classique à soupape de décharge (wastegate) ?",
     options: [
-      "Il supprime totalement le besoin d'un échangeur air-air (intercooler)",
-      "Il permet d'optimiser l'orientation des aubes de la turbine pour garantir un couple élevé à bas régime et limiter la surpression à haut régime",
-      "Il fonctionne exclusivement à l'huile végétale brute sans encrassement",
-      "Il élimine le temps de réponse (lag) en injectant de l'air comprimé électrique"
+      "Il supprime totalement le besoin d'un intercooler",
+      "Il permet d'optimiser l'orientation des aubes pour garantir un couple élevé à bas régime et limiter la surpression à haut régime",
+      "Il fonctionne exclusivement à l'huile végétale brute",
+      "Il élimine le temps de réponse en injectant de l'air comprimé électrique"
     ],
     correct: 1,
-    explanation: "Les ailettes mobiles du TGV modifient la section d'entrée des gaz d'échappement, offrant une réponse dynamique optimale dès les bas régimes et régulant le flux à haut régime."
+    explanation: "Les ailettes mobiles du TGV modifient la section d'entrée des gaz d'échappement, offrant une réponse dynamique optimale à tous les régimes."
   },
 
-  // --- HYDRAULIQUE (Hydraulique) ---
+  // --- 6. HYDRAULIQUE (Hydraulique) ---
   {
     domain: "Hydraulique",
-    question: "Dans un circuit hydraulique hydrostatique, que provoque un blocage brutal de l'actionneur (vérin ou moteur) si le circuit est dépourvu de limiteurs de pression tarés (soupapes de choc) ?",
+    question: "Dans un circuit hydraulique hydrostatique, que provoque un blocage brutal de l'actionneur si le circuit est dépourvu de limiteurs de pression tarés (soupapes de choc) ?",
     options: [
       "Une chute instantanée de la température de l'huile",
       "Un pic de surpression destructeur (coup de bélier hydraulique) capable de rompre les flexibles ou le corps de pompe",
-      "Une inversion automatique du sens de rotation de la pompe principale",
-      "Une purge naturelle des micro-bulles d'air du réservoir"
+      "Une inversion automatique du sens de rotation",
+      "Une purge naturelle des micro-bulles d'air"
     ],
     correct: 1,
-    explanation: "L'énergie cinétique du fluide et des masses en mouvement, bloquée net, génère une onde de choc à très haute pression (coup de bélier) nécessitant des soupapes de décharge de sécurité."
+    explanation: "L'énergie cinétique bloquée net génère une onde de choc à très haute pression (coup de bélier)."
   },
   {
     domain: "Hydraulique",
     question: "Quelle est la différence fondamentale entre une pompe hydraulique à cylindrée fixe et une pompe à cylindrée variable ?",
     options: [
-      "La pompe fixe délivre un débit proportionnel à sa vitesse de rotation uniquement, tandis que la variable adapte son débit pour une même vitesse en modifiant la course des pistons ou l'excentricité",
-      "La pompe fixe ne supporte pas des pressions supérieures à 50 bars",
-      "La pompe variable fonctionne sans huile, uniquement à l'eau glycolée",
-      "La pompe fixe est obligatoirement entraînée par un moteur électrique triphasé"
+      "La pompe fixe délivre un débit proportionnel à sa vitesse uniquement, tandis que la variable adapte son débit en modifiant la course des pistons ou l'excentricité",
+      "La pompe fixe ne supporte pas plus de 50 bars",
+      "La pompe variable fonctionne sans huile",
+      "La pompe fixe est obligatoirement entraînée par un moteur triphasé"
     ],
     correct: 0,
-    explanation: "La cylindrée fixe envoie un volume constant par tour. La cylindrée variable module ce volume par tour (via un plateau oscillant par exemple), optimisant la consommation énergétique."
+    explanation: "La cylindrée fixe envoie un volume constant par tour, alors que la cylindrée variable module ce volume (via un plateau oscillant)."
   },
 
-  // --- ÉLECTRICITÉ INDUSTRIELLE (Électricité) ---
+  // --- 7. ÉLECTRICITÉ INDUSTRIELLE (Électricité) ---
   {
     domain: "Électricité",
-    question: "Sur un schéma de liaison à la terre (régime de neutre) de type **IT**, que se passe-t-il réglementairement lors du **premier défaut d'isolement** phase-masse ?",
+    question: "Sur un schéma de liaison à la terre de type **IT**, que se passe-t-il réglementairement lors du premier défaut d'isolement phase-masse ?",
     options: [
-      "Le disjoncteur général déclenche instantanément pour couper l'installation",
+      "Le disjoncteur général déclenche instantanément",
       "L'installation continue de fonctionner normalement, le défaut est simplement signalé par un contrôleur permanent d'isolement (CPI)",
       "La tension passe immédiatement à 400V entre toutes les phases",
-      "Les moteurs triphasés s'inversent automatiquement de sens"
+      "Les moteurs s'inversent automatiquement"
     ],
     correct: 1,
-    explanation: "En régime IT, le neutre est isolé de la terre. Le premier défaut génère un courant trop faible pour déclencher, l'exploitation se poursuit en toute sécurité avec signalisation par le CPI."
+    explanation: "En régime IT, le neutre est isolé. Le premier défaut génère un courant trop faible pour déclencher, l'exploitation se poursuit avec signalisation par le CPI."
   },
   {
     domain: "Électricité",
-    question: "Quel est l'intérêt majeur du démarrage étoile-triangle (Y-Δ) sur un moteur à induction asynchrone triphasé de forte puissance ?",
+    question: "Quel est l'intérêt majeur du démarrage étoile-triangle (Y-Δ) sur un moteur asynchrone triphasé de forte puissance ?",
     options: [
-      "De doubler la vitesse nominale de rotation du rotor",
+      "De doubler la vitesse nominale",
       "De diviser par 3 le courant de démarrage pour éviter les chutes de tension excessives sur le réseau",
-      "D'annuler le facteur de puissance ($\cos\phi$) à vide",
+      "D'annuler le facteur de puissance à vide",
       "De transformer le moteur triphasé en moteur monophasé"
     ],
     correct: 1,
-    explanation: "Le couplage étoile sous-alimente temporairement les enroulements au démarrage, réduisant le courant d'appel de l'ordre de 3 fois par rapport à un démarrage direct."
+    explanation: "Le couplage étoile sous-alimente temporairement les enroulements, réduisant le courant d'appel d'environ 3 fois."
   },
 
-  // --- FRANÇAIS (Français) ---
+  // --- 8. FRANÇAIS (Français) ---
   {
     domain: "Français",
-    question: "Choisissez la formulation correcte pour compléter cette phrase : 'Les problèmes techniques que nous _______ rencontrés nécessitent une analyse rigoureuse.'",
+    question: "Choisissez la formulation correcte : 'Les problèmes techniques que nous _______ rencontrés nécessitent une analyse rigoureuse.'",
     options: [
       "avons",
       "avons eu",
       "avons rencontrés",
       "avons rencontrées"
     ],
-    correct: 0,
-    explanation: "Le participe passé conjugué avec l'auxiliaire 'avoir' ne s'accorde avec le COD ('que', mis pour 'problèmes', masculin pluriel) que si celui-ci est placé *avant* le verbe. Attendez... Regardons bien : 'que' (COD) est placé *avant* le verbe 'avons rencontrés'. Oh ! 'problèmes' est masculin pluriel, donc 'rencontrés' s'accorde. Reprenons l'option 2 (ou la règle d'accord du COD) : le COD 'que' précède le verbe, donc l'accord au masculin pluriel 'rencontrés' est obligatoire ! Petite subtilité de piège expert."
+    correct: 2,
+    explanation: "Le participe passé conjugué avec 'avoir' s'accorde avec le COD ('que', mis pour 'problèmes', masculin pluriel) placé *avant* le verbe."
   },
   {
     domain: "Français",
-    question: "Quelle est la nature grammaticale exacte du mot 'leur' dans la phrase : 'Le technicien **leur** a expliqué la panne.' ?",
+    question: "Quelle est la nature grammaticale exacte du mot 'leur' dans : 'Le technicien **leur** a expliqué la panne.' ?",
     options: [
-      "Un pronom personnel (atone) complément d'objet indirect (COI)",
+      "Un pronom personnel complément d'objet indirect (COI)",
       "Un adjectif possessif invariable",
       "Un pronom démonstratif neutre",
       "Un adverbe de lieu"
     ],
     correct: 0,
-    explanation: "'Leur' remplace un groupe nominal de personnes (à qui ? -> à eux/elles). Placé devant le verbe, c'est un pronom personnel COI (invariable)."
+    explanation: "'Leur' remplace un groupe nominal de personnes (à qui ?). Placé devant le verbe, c'est un pronom personnel COI invariable."
   },
 
-  // --- ANGLAIS (Anglais) ---
+  // --- 9. ANGLAIS (Anglais) ---
   {
     domain: "Anglais",
     question: "Complete this professional technical sentence: 'If the hydraulic pressure _______ below the safety threshold, the system automatically shuts down.'",
@@ -270,7 +306,7 @@ const questionsData = [
       "dropped"
     ],
     correct: 1,
-    explanation: "C'est une conditionnelle de type 1 (First Conditional) exprimant une règle générale ou un fait probable : 'If' + présent simple ('drops'), proposition principale au présent ou futur ('shuts down')."
+    explanation: "C'est une conditionnelle de type 1 (First Conditional) : 'If' + présent simple ('drops'), proposition principale au présent/futur ('shuts down')."
   },
   {
     domain: "Anglais",
@@ -282,7 +318,7 @@ const questionsData = [
       "The mechanics are being repaired by the main diesel engine."
     ],
     correct: 1,
-    explanation: "Le temps d'origine est le présent continu ('are repairing'). À la voix passive, cela devient 'is/are being' + participe passé ('is being repaired')."
+    explanation: "Le temps d'origine est le présent continu ('are repairing'). À la voix passive, cela devient 'is being' + participe passé ('is being repaired')."
   }
 ];
 
@@ -330,7 +366,7 @@ function startQuiz(domain) {
   // Filtrer les questions du domaine sélectionné
   let filtered = questionsData.filter(q => q.domain === domain);
   
-  // Mélanger et limiter à 20 questions max (ou toutes si moins de 20)
+  // Mélanger et limiter à 20 questions max (ou toutes si moins disponibles)
   activeQuestions = shuffleArray(filtered).slice(0, 20);
   
   currentIndex = 0;
@@ -391,7 +427,6 @@ function updateTimerDisplay() {
 }
 
 function handleTimeout() {
-  // Compter comme faux si le temps est écoulé
   const q = activeQuestions[currentIndex];
   userAnswers.push({
     question: q.question,
@@ -445,10 +480,10 @@ function highlightOptions(selected, correct) {
   const buttons = optionsContainer.querySelectorAll('.option-btn');
   buttons.forEach((btn, index) => {
     if (index === correct) {
-      btn.style.backgroundColor = '#28a745'; // Vert pour la bonne réponse
+      btn.style.backgroundColor = '#28a745';
       btn.style.color = '#fff';
     } else if (index === selected) {
-      btn.style.backgroundColor = '#dc3545'; // Rouge pour la mauvaise réponse choisie
+      btn.style.backgroundColor = '#dc3545';
       btn.style.color = '#fff';
     }
   });
@@ -473,15 +508,14 @@ function showResults() {
   const percentage = (score / activeQuestions.length) * 100;
   let feedback = "";
   if (percentage >= 80) {
-    feedback = "🏆 Excellent niveau ! Maîtrise parfaite des concepts de niveau supérieur.";
+    feedback = "🏆 Excellent niveau ! Maîtrise parfaite des concepts d'expert.";
   } else if (percentage >= 50) {
-    feedback = "👍 Bon niveau global, mais quelques notions techniques méritent d'être consolidées.";
+    feedback = "👍 Bon niveau global, mais quelques notions techniques demandent de l'approfondissement.";
   } else {
-    feedback = "📚 Niveau perfectible. Reprenez les révisions techniques pour consolider vos bases d'expert.";
+    feedback = "📚 Niveau perfectible. Revoyez les notions techniques pour consolider votre expertise.";
   }
   feedbackText.textContent = `"${feedback}"`;
 
-  // Génération de la correction détaillée
   correctionContainer.innerHTML = '';
   userAnswers.forEach((ans, idx) => {
     const item = document.createElement('div');
@@ -509,7 +543,6 @@ function returnToHome() {
   homeScreen.classList.remove('hidden');
 }
 
-// Fonction utilitaire pour mélanger un tableau (Fisher-Yates)
 function shuffleArray(array) {
   let arr = [...array];
   for (let i = arr.length - 1; i > 0; i--) {
